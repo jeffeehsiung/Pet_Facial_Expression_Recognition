@@ -11,10 +11,12 @@ Second of all, when surfing the web for ideas we found a face reconstruction pro
 
  - Large Pose: The model is able to reconstruct the animal in a large variety of poses. This is a very important feature since we want to be able to reconstruct the animal in any pose.
  - Three-Dimensional: The model is able to reconstruct the animal in 3D. This is a very important feature since we want to be able to reconstruct the animal in 3D. (This will be in a simple sparce 3D face modeling format) see picture from paper below.
+<p align="center">
+    <img src="sparse_3D_recon.jpeg" alt="3D face model">
+    <br>
+    From paper <a href="#paper1"> [1]</a>
+</p>
 
-![3D face model](sparse_3D_recon.jpeg)
-
-From paper [1](#paper1)
 
 
 # Resources
