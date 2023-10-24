@@ -2,14 +2,14 @@
 
 <!--TOC-->
 
-* 🚀 [Motivation and explenation of title](#motivation-and-explenation-of-title)
-    * 🤔 [What problem are we tackling](#what-problem-are-we-tackling)
-        * 💡 [Solution](#solution)
-    * 🧐 [Explanation of title](#explanation-of-title)
-* 📚 [Resources](#resources)
-    * 📑 [Papers](#papers)
-    * 📊 [Datasets](#datasets)
-    * 💻 [Project Source Code](#project-source-code)
+* [🚀 Motivation and Explanation of Title](#motivation-and-explanation-of-title)
+    * [🤔 What problem are we tackling](#what-problem-are-we-tackling)
+        * [💡 Solution](#solution)
+    * [🧐 Explanation of title](#explanation-of-title)
+* [📚 Resources](#resources)
+    * [📑 Papers](#papers)
+    * [📊 Datasets](#datasets)
+    * [💻 Project Source Code](#project-source-code)
 
 
 ## 🚀 Motivation and explenation of title
