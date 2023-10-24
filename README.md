@@ -2,16 +2,12 @@
 # Large Pose Three-Dimensional Animal Morphology Reconstruction Using Direct Volumetric CNN Regression
 
 
-# MachineLearning
-
-
-
 # Resources
 ## Datasets
-* [1] (https://www.kaggle.com/datasets?search=fac&tags=13207-Computer+Vision) Kaggle face recognition dataset collection
-* [2] (https://www.kaggle.com/datasets/nagasai524/facial-keypoint-detection) Facial keypoint detection
-* [3] (https://www.kaggle.com/datasets/andrewmvd/animal-faces/data) Animal faces
-## Project Source Code
-* [a] (https://github.com/AaronJackson/vrn) 3D Face Reconstruction using CNN
-* [b] 
+* [Kaggle face recognition dataset collection](https://www.kaggle.com/datasets?search=fac&tags=13207-Computer+Vision) 
+* [Kaggle Facial keypoint detection](https://www.kaggle.com/datasets/nagasai524/facial-keypoint-detection) 
+* [Kaggle Animal faces](https://www.kaggle.com/datasets/andrewmvd/animal-faces/data) 
 
+## Project Source Code
+* [3D Face Reconstruction using CNN](https://github.com/AaronJackson/vrn) 
+* [500 ML Project](https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code)
