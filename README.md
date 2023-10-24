@@ -17,7 +17,7 @@
 First of all the motivation behind our project is rooted in the love for animals and the intrest in expanding our knowledge of field of computer vision. When browdsing the web for ideas we came across human reconstruction, and thought why not with animals.
 
 
-### 🤔 What problem are we tackling
+### What problem are we tackling
 
 Traditional 3D reconstruction methods ofter require expensive and time-consuming technology, like 3D-scanning <a href="https://en.wikipedia.org/wiki/3D_scanning">Source to Wikipedia</a>, or even manual reconstriuction in 3D software (Inventor, AutoCad, Solidworks).
 Which are not feasible for large-scale applications or capturing animals in their natural habitats.
