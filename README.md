@@ -4,6 +4,7 @@
 
 * [🚀 Motivation and Explanation of Title](#🚀-motivation-and-explanation-of-title)
     * [🤔 What problem are we tackling](#🤔-what-problem-are-we-tackling)
+        * [🧮 Methods](#🧮-methods)
         * [💡 Solution](#💡-solution)
     * [🧐 Explanation of title](#🧐-explanation-of-title)
 * [📚 Resources](#📚-resources)
@@ -16,12 +17,32 @@
 
 First of all the motivation behind our project is rooted in the love for animals and the intrest in expanding our knowledge of field of computer vision. When browdsing the web for ideas we came across human reconstruction, and thought why not with animals.
 
+With an aim to apply computer vision using machine learning technique on animals model reconstruction from 2D to 3D, and following the inpsirations derived from one, Little Genius Application (referenced as follows), and two, Apple's vision in realizing mixed-reality, or augmented reality, world, we decided to research and develop the less explored computer vision program for animals. Eventually enabling including the beloved pet into our digitized analog world that one can for example monitor the health and the motion of their pets in real-time, interact with their at-home pet dyanimcally, or relive vivdly the moments with ones' past pets by storig digitized model of its behaviors in memory.
+
+<video width="320" height="240" controls>
+  <source src="NPL.mp4" type="video/mp4">
+</video>
 
 ### 🤔 What problem are we tackling
 
 Traditional 3D reconstruction methods ofter require expensive and time-consuming technology, like 3D-scanning <a href="https://en.wikipedia.org/wiki/3D_scanning">Source to Wikipedia</a>, or even manual reconstriuction in 3D software (Inventor, AutoCad, Solidworks).
 Which are not feasible for large-scale applications or capturing animals in their natural habitats.
 
+However, we can simplify our tasks in fitting the time constraints of this project that only animals from avaialbe datasets presenting less interference from the background of natural habitat are to be reconstructed.
+
+Concerns for 2D to 3D translation may result from that while a good image-to-image translation model should learn a mapping between different visual domains satisfying the following properties: 
+    1) diversity of generated images and 
+    2) scalability over multiple domains. 
+Existing methods address either of the issues, having limited diversity or multiple models for all domains. Here, domain implies a set of images that can be grouped as a visually distinctive category, and each image has a unique appearance, which we call style.
+
+The next challenge we are tackling is the algrithm modeling of animal. As to monitor in real-time, the algorithms need to be optimzied fro speed without compromising accuracy. Additionally, to integrate with AR/VR platforms, compatability would in parallel post an issue. Yet since the scope of this project does not contain implementation on hardware platform, we will limit ourselves to a high speed and high accuracy performance algorithm development only.
+
+
+#### 🧮 Methods
+To deliver a real-time computable, superiority in terms of visual quality, diversity, and scalability framework, the following methods are being proposed for this project:
+1) Proposing the usage of StarGAN v2, a single framework that tackles both and shows significantly improved results over the baselines. 
+2) Utilize the readily available high-quality animal faces datasets with large inter- and intra-domain differences to train and validate our design.
+3) _not yet finihsed_
 
 #### 💡 Solution
 
