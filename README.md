@@ -19,9 +19,8 @@ First of all the motivation behind our project is rooted in the love for animals
 
 With an aim to apply computer vision using machine learning technique on animals model reconstruction from 2D to 3D, and following the inpsirations derived from one, Little Genius Application (referenced as follows), and two, Apple's vision in realizing mixed-reality, or augmented reality, world, we decided to research and develop the less explored computer vision program for animals. Eventually enabling including the beloved pet into our digitized analog world that one can for example monitor the health and the motion of their pets in real-time, interact with their at-home pet dyanimcally, or relive vivdly the moments with ones' past pets by storig digitized model of its behaviors in memory.
 
-<video width="320" height="240" controls>
-  <source src="NPL.mp4" type="video/mp4">
-</video>
+<!-- add the large files -->
+[![Watch the video](https://img.youtube.com/vi/7wLLgFCjW7I/maxresdefault.jpg)](https://youtu.be/7wLLgFCjW7I)
 
 ### 🤔 What problem are we tackling
 
