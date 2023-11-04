@@ -51,15 +51,15 @@ Existing methods address either of the issues leading to limited diversity or mu
 #### 🧮 Methods
 The principle algorithm for this project is Neural Networks, where all the remaining methods are to assist in optimizaing neural network computation efficiency and to minimize error between the expected output and the actual output.
 #### 2D to 3D facial reconstruction ####
-* CNN : direct regression of a volumetric 3D facial geometry representation from a single 2D image <a href="#paper7"> [7]</a> based on the “hourglass network”.
-* * The CNN architecture feaures 
+* **CNN** : direct regression of a volumetric 3D facial geometry representation from a single 2D image <a href="#paper7"> [7]</a> based on the “hourglass network”.
+- **The CNN architecture feaures** 
     1) working with just a single 2D facial image that does not require accurate alignment nor establishes dense correspondence between images
     2) works for arbitrary facial poses and expressions, and can be used to reconstruct the whole 3D facial geometry (including the non-visible parts of the face) bypassing the construction (during training) and fitting (during testing) of a 3D Morphable Model (3DMM).
         * 3DMM is to estimates 3D facial structure from a single image using an iterative training process. However, it's prone to failure, requires careful initialization, and involves solving a slow, complex optimization problem.
-* * Volumetric Regression Networks (VRN) Method
+- **Volumetric Regression Networks (VRN) Method**
     * discretizing the 3D space into voxels {w, h, d}, assigning a value of 1 to all points enclosed by the 3D facial scan, and 0 otherwise. 
     * ${V_{whd}}$ is the ground truth for voxel {w, h, d} and is equal to 1, if voxel {w, h, d} belongs to the 3D volumetric representation of the face and 0 otherwise (i.e. it belongs to the background).
-    * VRN guided by facial landmarks
+    * **VRN guided by facial landmarks**
         1) input an RGB image stacked with 68 channels, each containing a Gaussian (σ = 1, approximate diameter of 6 pixels) centred on each of the 68 landmarks.
         2) detects the 2D projection of the 3D landmarks by performing a simpler face analysis task
         3) train a stacked hourglass network which accepts guidance from landmarks during training and inference
@@ -67,14 +67,14 @@ The principle algorithm for this project is Neural Networks, where all the remai
         5) fed the stack into the reconstruction network to directly regresses the volume: 
         * The volumetric regression uses the sigmoid cross entropy loss function:
             <p align= "center">
-            <img src="img/sigmoid_cross_entropy.png" alt="sigmoid cross entropy loss function" width="200"/>
+            <img src="img/sigmoid_cross_entropy.png" alt="sigmoid cross entropy loss function" width="100"/>
             </br>
             <a href="#paper7"> [7]</a>
             </p>
         6) output a volume of 192 × 192 × 200 of real values
-    * VRN - Guided architecture is indicated as follows: 
+    * **VRN - Guided architecture** 
         <p align= "center">
-        <img src="img/vrn_guided" alt="VRN - Guided architecture" width="200"/>
+        <img src="img/vrn_guided.png" alt="VRN - Guided architecture" width="400"/>
         </br>
         <a href="#paper7"> [7]</a>
         </p>
