@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%F0%9F%94%8Defficient-multi-view-3d-model-reconstruction-using-cnn-regression">🔍Efficient Multi-View 3D Model Reconstruction Using CNN Regression</h1>
+<!--TOC-->
+<ul>
+<li><a href="#%F0%9F%9A%80-motivation-and-explanation-of-title">🚀 Motivation and Explanation of Title</a>
+<ul>
+<li><a href="#%F0%9F%A4%94-what-problem-are-we-tackling">🤔 What problem are we tackling</a>
+<ul>
+<li><a href="#%F0%9F%A7%AE-methods">🧮 Methods</a></li>
+<li><a href="#%F0%9F%92%A1-solution">💡 Solution</a></li>
+</ul>
+</li>
+<li><a href="#%F0%9F%A7%90-explanation-of-title">🧐 Explanation of title</a></li>
+</ul>
+</li>
+<li><a href="#%F0%9F%93%9A-resources">📚 Resources</a>
+<ul>
+<li><a href="#%F0%9F%93%91-papers">📑 Papers</a></li>
+<li><a href="#%F0%9F%93%8A-datasets">📊 Datasets</a></li>
+<li><a href="#%F0%9F%92%BB-project-source-code">💻 Project Source Code</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="%F0%9F%9A%80-motivation">🚀 Motivation</h2>
+<p>😎 The motivation behind our project is rooted in the love for animals and the intrest in expanding our knowledge of field of computer vision.</p>
+<p>💭 When browdsing the web for ideas we came across human facila and body 3D reconstruction for extended reality including AR and VR.</p>
+<p>🐈 Following the further inpsirations from one, Little Genius Application (youtube video link), and two, Apple's vision in realizing mixed-reality, or augmented reality, world, we decided to research and develop the less explored computer vision program for animals.</p>
+<!-- add the large files -->
+<p><a href="https://youtu.be/7wLLgFCjW7I"><img src="https://img.youtube.com/vi/7wLLgFCjW7I/maxresdefault.jpg" alt="Little Genius Application Youtube Link"></a></p>
+<p>🐶 In this project, we aim to reconstruct 3D animals facial model from 2D target images to 3D which eventually would stinulate and enable application development revolving around interacting and involving digitized 3D pets and wildlife experiences in the extended reality 🐕‍🦺🐈🐅🐧🦁🦭.</p>
+<p>👓 Applications which brings the beloved pet into the digitized analog world are, for example, in pet care industry, where one can through light-weighted AR glasses monitor the health and the motion of their pets in real-time, interact with their at-home pet dyanimcally. Similarity, in the general pet-afterlife industry, one can relive vivdly the moments with their past pets in such extended realty by initially storing its digitized behavioral model the extended reality cloud memory. Or, at last, for all the potenail 3D extended world development, wildlife and domesticated animals cab be included as well.</p>
+<h3 id="%F0%9F%A4%94-what-problem-are-we-tackling">🤔 What problem are we tackling</h3>
+<h4 id="2d-to-3d-facial-reconstruction">2D to 3D facial reconstruction</h4>
+<ul>
+<li>
+<p>Traditional 3D reconstruction methods ofter require expensive and time-consuming technology, like 3D-scanning <a href="https://en.wikipedia.org/wiki/3D_scanning">Source to Wikipedia</a>, or even manual reconstriuction in 3D software (Inventor, AutoCad, Solidworks), which are not feasible for large-scale applications or capturing animals in their natural habitats.</p>
+</li>
+<li>
+<p>As to conventional methodological challenges such as establishing dense correspondences across large facial poses, expressions, and non-uniform illumination, these methods in general requires complex pipelines and solving non-convex difficult optimization problems for both model building (during training) and model fitting (during testing)</p>
+</li>
+<li>
+<p>However, in this project, we will utilize the Convolutional Neural Network (CNN) framework proposed in <a href="#paper6"> [6]</a> to address many of these limitations by training the model on appropriate dataset consisting of 2D images and 3D facial models or scans.</p>
+</li>
+</ul>
+<h4 id="extended-challenges-aroused-from-animal-facial-reconstruction">Extended challenges aroused from Animal facial reconstruction</h4>
+<ul>
+<li>
+<p>To extract correctly the animal facial model, in this project we simplify our tasks by applying the windowing method on the animal image datasets that only animals faces contained in a small window with less background interference of natural habitat is to be processed.</p>
+</li>
+<li>
+<p>Additional oncerns involves multiple-domain image-to-image translation model. A good model should learn a mapping between different visual domains satisfying the scalability over multiple domains.</p>
+</li>
+<li>
+<p>Domain implies a set of images that can be grouped as a visually distinctive category, where each image has a unique appearance which we call style. In the project context, challenge would be to transform the facial landmakrs model that is suitable for human domain to one for animal domain.</p>
+</li>
+</ul>
+<h4 id="%F0%9F%A7%AE-methods">🧮 Methods</h4>
+<p>The principle algorithm for this project is Neural Networks, where all the remaining methods are to assist in optimizaing neural network computation efficiency and to minimize error between the expected output and the actual output.</p>
+<h4 id="2d-to-3d-facial-reconstruction">2D to 3D facial reconstruction</h4>
+<ul>
+<li><strong>CNN</strong> : direct regression of a volumetric 3D facial geometry representation from a single 2D image <a href="#paper6"> [6]</a> based on the “hourglass network”.</li>
+</ul>
+<ul>
+<li><strong>The CNN architecture feaures</strong>
+<ol>
+<li>working with just a single 2D facial image that does not require accurate alignment nor establishes dense correspondence between images</li>
+<li>works for arbitrary facial poses and expressions, and can be used to reconstruct the whole 3D facial geometry (including the non-visible parts of the face) bypassing the construction (during training) and fitting (during testing) of a 3D Morphable Model (3DMM).
+<ul>
+<li>3DMM is to estimates 3D facial structure from a single image using an iterative training process. However, it's prone to failure, requires careful initialization, and involves solving a slow, complex optimization problem.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>Volumetric Regression Networks (VRN) Method</strong>
+<ul>
+<li>discretizing the 3D space into voxels {w, h, d}, assigning a value of 1 to all points enclosed by the 3D facial scan, and 0 otherwise.</li>
+<li>${V_{whd}}$ is the ground truth for voxel {w, h, d} and is equal to 1, if voxel {w, h, d} belongs to the 3D volumetric representation of the face and 0 otherwise (i.e. it belongs to the background).</li>
+<li><strong>VRN guided by facial landmarks</strong>
+<ol>
+<li>input an RGB image stacked with 68 channels, each containing a Gaussian (σ = 1, approximate diameter of 6 pixels) centred on each of the 68 landmarks.</li>
+<li>detects the 2D projection of the 3D landmarks by performing a simpler face analysis task</li>
+<li>train a stacked hourglass network which accepts guidance from landmarks during training and inference</li>
+<li>stacks these with the original image where each rectangle is a residual module of 256 feature</li>
+<li>fed the stack into the reconstruction network to directly regresses the volume:</li>
+</ol>
+<ul>
+<li>The volumetric regression uses the sigmoid cross entropy loss function:</li>
+</ul>
+<ol start="6">
+<li>output a volume of 192 × 192 × 200 of real values</li>
+</ol>
+</li>
+<li><strong>VRN - Guided architecture</strong>
+<br></li>
+</ul>
+</li>
+</ul>
+<p align="center">
+    <img src="file:///Users/jeffeehsiung/Desktop/Toledo/machine learning/MachineLearning/img/sigmoid_cross_entropy.png" alt="sigmoid cross entropy loss function" width="300">
+    <br>
+    Sigmoid cross entropy loss function<a href="#paper6">[6]</a>
+</p>
+<br>
+<p align="center">
+    <img src="file:///Users/jeffeehsiung/Desktop/Toledo/machine learning/MachineLearning/img/vrn_guided.png" alt="VRN - Guided architecturen" width="600">
+    <br>
+    VRN - Guided architecture<a href="#paper6">[6]</a>
+</p>
+<br>
+<h4 id="extended-challenges-aroused-from-animal-facial-reconstruction">Extended challenges aroused from Animal facial reconstruction</h4>
+<ol>
+<li>To develop an animal facial landmark model, we can try utlizing the Style encoder and possibly Mapping Network proposed in StarGAN v2 model <a href="#paper5"> [5]</a>. The mapping network learns to transform random Gaussian noise into a style code, while the encoder learns to extract the style code from a given reference image.</li>
+<li>Zhang et al. <a href="#paper7"> [7]</a> developed a structural hourglass network to predict the facial landmarks with corresponding heatmaps. The CNN based facial landmarks localization gets the high-level features from the face and predicts all the keypoints simultaneously, which method may help to construct the auto-detected animal facial landmark model.</li>
+</ol>
+<h4 id="%F0%9F%92%A1-solution">💡 Solution</h4>
+<p>We will try to use the power of ML to make this possible.</p>
+<p>By doing so, researchers, biologist, vetnarie, and educatorscan easily access 3D images/models of animals for various purposes: anatomy, sick-ness behaviour, behavior in general, or even creating realistic simulations.</p>
+<p>Even more so we think this has a potential to be using the gaming industry, where 3D models are used to create realistic simulations of animals. Think about the MetaVerse, you want your pet to be in the game?  You don't want to spend hours creating it? Just take a few pictures of it and the game will create a 3D model of it.</p>
+<h3 id="%F0%9F%A7%90-explanation-of-title">🧐 Explanation of title</h3>
+<ul>
+<li>
+<p><strong>Efficient Multi-View</strong>: The model is able to reconstruct the animal from multiple images. This is a very important feature since we want to be able to reconstruct the animal from multiple images.</p>
+</li>
+<li>
+<p><strong>3D</strong>: The model is able to reconstruct the animal in 3D. This is a very important feature since we want to be able to reconstruct the animal in 3D. (This will be in a simple sparce 3D face modeling format) see picture from paper below.</p>
+</li>
+<li>
+<p><strong>Reconstruction</strong>: Talks for itself</p>
+</li>
+<li>
+<p><strong>CNN Regression</strong>: The model uses a CNN to regress the 3D model from the input images. This is a very important feature since we want to be able to reconstruct the animal from multiple images<a href="#paper2"> [2]</a><a href="#paper3"> [3]</a><a href="#paper4"> [4]</a>.</p>
+</li>
+</ul>
+<p align="center">
+    <img src="file:///Users/jeffeehsiung/Desktop/Toledo/machine learning/MachineLearning/img/sparse_3D_recon.jpeg" alt="3D face model">
+    <br>
+    From paper <a href="#paper1"> [1]</a>
+</p>
+<h1 id="%F0%9F%93%9A-resources">📚 Resources</h1>
+<h2 id="%F0%9F%93%91-papers">📑 Papers</h2>
+<p><a name="paper1"></a>
+[1] <em>Wood, E. et al. (2022). <strong>3D Face Reconstruction with Dense Landmarks</strong>. In: Avidan, S., Brostow, G.</em>, Cissé, M., Farinella, G.M., Hassner, T. (eds) Computer Vision – ECCV 2022. ECCV 2022. Lecture Notes in Computer Science, vol 13673. Springer, Cham..
+<a href="https://doi.org/10.1007/978-3-031-19778-9_10"><img src="https://zenodo.org/badge/DOI/10.1007/978-3-031-19778-9_10.svg" alt="DOI:10.1007/978-3-031-19778-9_10"></a></p>
+<p><a name="paper2"></a>
+[2] <em>Lawin, F. J., Moeller, M.-M., &amp; Petersson, L</em>. (2017). <strong>MVSNet: Depth Inference for Unstructured Multi-view Stereo.</strong> Computer Vision and Pattern Recognition (CVPR).
+<a href="https://arxiv.org/abs/1703.06870"><img src="https://img.shields.io/badge/arXiv-1703.06870-b31b1b.svg" alt="arXiv"></a></p>
+<p><a name="paper3"></a>
+[3] <em>Fanzi Wu, Linchao Bao, Yajing Chen, Yonggen Ling, Yibing Song, Songnan Li, King Ngi Ngan, Wei Liu</em>. (2019). <strong>MVF-Net: Multi-View 3D Face Morphable Model Regression</strong>. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2019, pp. 959-968
+<a href="https://arxiv.org/abs/1703.06870"><img src="https://img.shields.io/badge/arXiv-1703.06870-b31b1b.svg" alt="arXiv"></a></p>
+<p><a name="paper4"></a>
+[4] <em>Vasquez-Gomez, J.I., Troncoso, D., Becerra, I. et al</em>. <strong>Next-best-view regression using a 3D convolutional neural network</strong>. Machine Vision and Applications 32, 42 (2021).
+<a href="https://doi.org/10.1007/s00138-020-01166-2"><img src="https://zenodo.org/badge/DOI/10.1007/s00138-020-01166-2.svg" alt="DOI:10.1007/s00138-020-01166-2"></a></p>
+<p><a name="paper5"></a>
+[5] <em>Y. Choi, Y. Uh, J. Yoo and J. -W. Ha</em>, <strong>StarGAN v2: Diverse Image Synthesis for Multiple Domains</strong>. 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Seattle, WA, USA, 2020, pp. 8185-8194.
+<a href="https://doi.org/10.1109/CVPR42600.2020.00821"><img src="https://zenodo.org/badge/DOI/10.1109/CVPR42600.2020.008212.svg" alt="DOI:10.1109/CVPR42600.2020.00821"></a></p>
+<p><a name="paper6"></a>
+[6] <em>A. S. Jackson, A. Bulat, V. Argyriou and G. Tzimiropoulos</em>, <strong>Large Pose 3D Face Reconstruction from a Single Image via Direct Volumetric CNN Regression</strong>, 2017 IEEE International Conference on Computer Vision (ICCV), Venice, Italy, 2017, pp. 1031-1039, doi: 10.1109/ICCV.2017.117.
+<a href="https://doi.org/10.1109/ICCV.2017.117"><img src="https://zenodo.org/badge/DOI/10.1109/ICCV.2017.117.svg" alt="DOI:10.1109/ICCV.2017.117"></a></p>
+<p><a name="paper7"></a>
+[7] <em>J. Zhang, H. Hu and S. Feng</em>, <strong>Robust Facial Landmark Detection via Heatmap-Offset Regression</strong>, in IEEE Transactions on Image Processing, vol. 29, pp. 5050-5064, 2020.
+<a href="https://doi.org/10.1109/TIP.2020.2976765"><img src="https://zenodo.org/badge/DOI/10.1109/TIP.2020.2976765.svg" alt="DOI:10.1109/TIP.2020.2976765"></a></p>
+<h2 id="%F0%9F%93%8A-datasets">📊 Datasets</h2>
+<ul>
+<li><a href="https://www.kaggle.com/datasets?search=fac&amp;tags=13207-Computer+Vision">Kaggle face recognition dataset collection</a></li>
+<li><a href="https://www.kaggle.com/datasets/nagasai524/facial-keypoint-detection">Kaggle Facial keypoint detection</a></li>
+<li><a href="https://www.kaggle.com/datasets/andrewmvd/animal-faces/data">Kaggle Animal faces</a></li>
+</ul>
+<h2 id="%F0%9F%92%BB-project-source-code">💻 Project Source Code</h2>
+<ul>
+<li><a href="https://github.com/AaronJackson/vrn">3D Face Reconstruction using CNN</a></li>
+<li><a href="https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code">500 ML Project</a></li>
+<li><a href="https://github.com/clovaai/stargan-v2/blob/master/core/model.py">STargan V2: Mapping Network and Style Encoder</a></li>
+</ul>
+
+</body>
+</html>
