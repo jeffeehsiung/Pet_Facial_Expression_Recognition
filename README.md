@@ -96,11 +96,14 @@ Even more so we think this has a potential to be using the gaming industry, wher
 
 - **CNN Regression**: The model uses a CNN to regress the 3D model from the input images. This is a very important feature since we want to be able to reconstruct the animal from multiple images<a href="#paper2"> [2]</a><a href="#paper3"> [3]</a><a href="#paper4"> [4]</a>.
 
-<p align="center">
+<!-- <p align="center">
     <img src="img/sparse_3D_recon.jpeg" alt="3D face model">
     <br>
     From paper <a href="#paper1"> [1]</a>
-</p>
+</p> -->
+<img src="img/sparse_3D_recon.jpeg" alt="3D face model" width="600" style="display: block; margin: 0 auto"/>
+<br>
+From paper <a href="#paper1"> [1]</a>
 
 # 📚 Resources
 
