@@ -102,7 +102,6 @@ Even more so we think this has a potential to be using the gaming industry, wher
     From paper <a href="#paper1"> [1]</a>
 </p> -->
 <img src="img/sparse_3D_recon.jpeg" alt="3D face model" width="600" style="display: block; margin: 0 auto"/>
-<br>
 From paper <a href="#paper1"> [1]</a>
 
 # 📚 Resources
