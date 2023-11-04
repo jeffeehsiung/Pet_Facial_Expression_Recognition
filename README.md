@@ -32,22 +32,44 @@
 ### 🤔 What problem are we tackling
 
 #### 2D to 3D facial reconstruction ####
-Traditional 3D reconstruction methods ofter require expensive and time-consuming technology, like 3D-scanning <a href="https://en.wikipedia.org/wiki/3D_scanning">Source to Wikipedia</a>, or even manual reconstriuction in 3D software (Inventor, AutoCad, Solidworks).Which are not feasible for large-scale applications or capturing animals in their natural habitats.
+* Traditional 3D reconstruction methods ofter require expensive and time-consuming technology, like 3D-scanning <a href="https://en.wikipedia.org/wiki/3D_scanning">Source to Wikipedia</a>, or even manual reconstriuction in 3D software (Inventor, AutoCad, Solidworks), which are not feasible for large-scale applications or capturing animals in their natural habitats.
+
+* As to conventional methodological challenges such as establishing dense correspondences across large facial poses, expressions, and non-uniform illumination, these methods in general requires complex pipelines and solving non-convex difficult optimization problems for both model building (during training) and model fitting (during testing)
+
+* However, in this project, we will utilize the Convolutional Neural Network (CNN) framework proposed in <a href="#paper7"> [7]</a> to address many of these limitations by training the model on appropriate dataset consisting of 2D images and 3D facial models or scans.
+
 
 #### Extended challenges aroused from Animal facial reconstruction ####
-However, we can simplify our tasks in fitting the time constraints of this project that only animals from avaialbe datasets presenting less interference from the background of natural habitat are to be reconstructed.
+* To extract correctly the animal facial model, in this project we simplify our tasks by applying the windowing method on the animal image datasets that only animals faces contained in a small window with less background interference of natural habitat is to be processed.
 
-Concerns for 2D to 3D translation may result from that while a good image-to-image translation model should learn a mapping between different visual domains satisfying the following properties: 
-    1) diversity of generated images and 
+* Additional oncerns involves multiple-domain image-to-image translation model. A good model should learn a mapping between different visual domains satisfying the following properties: 
+    1) diversity of generated images 
     2) scalability over multiple domains. 
-Existing methods address either of the issues, having limited diversity or multiple models for all domains. Here, domain implies a set of images that can be grouped as a visually distinctive category, and each image has a unique appearance, which we call style.
-
-The next challenge we are tackling is the algrithm modeling of animal. As to monitor in real-time, the algorithms need to be optimzied fro speed without compromising accuracy. Additionally, to integrate with AR/VR platforms, compatability would in parallel post an issue. Yet since the scope of this project does not contain implementation on hardware platform, we will limit ourselves to a high speed and high accuracy performance algorithm development only.
-
+Existing methods address either of the issues leading to limited diversity or multiple models for all domains. 
+* Domain implies a set of images that can be grouped as a visually distinctive category, where each image has a unique appearance which we call style.
 
 #### 🧮 Methods
 The principle algorithm for this project is Neural Networks, where all the remaining methods are to assist in optimizaing neural network computation efficiency and to minimize error between the expected output and the actual output.
 #### 2D to 3D facial reconstruction ####
+* CNN : direct regression of a volumetric 3D facial geometry representation from a single 2D image <a href="#paper7"> [7]</a> based on the “hourglass network”.
+* * The CNN architecture feaures 
+    1) working with just a single 2D facial image that does not require accurate alignment nor establishes dense correspondence between images
+    2) works for arbitrary facial poses and expressions, and can be used to reconstruct the whole 3D facial geometry (including the non-visible parts of the face) bypassing the construction (during training) and fitting (during testing) of a 3D Morphable Model (3DMM).
+        * 3DMM is to estimates 3D facial structure from a single image using an iterative training process. However, it's prone to failure, requires careful initialization, and involves solving a slow, complex optimization problem.
+* * Volumetric Regression Networks (VRN) Method
+    * discretizing the 3D space into voxels {w, h, d}, assigning a value of 1 to all points enclosed by the 3D facial scan, and 0 otherwise. 
+    * ${V_{whd}}$ is the ground truth for voxel {w, h, d} and is equal to 1, if voxel {w, h, d} belongs to the 3D volumetric representation of the face and 0 otherwise (i.e. it belongs to the background).
+    * VRN guided by facial landmarks
+        1) input an RGB image stacked with 68 channels, each containing a Gaussian (σ = 1, approximate diameter of 6 pixels) centred on each of the 68 landmarks.
+        2) detects the 2D projection of the 3D landmarks by performing a simpler face analysis task
+        3) train a stacked hourglass network which accepts guidance from landmarks during training and inference
+        4) stacks these with the original image where each rectangle is a residual module of 256 feature 
+        5) fed the stack into the reconstruction network to directly regresses the volume: 
+        * * The volumetric regression uses the sigmoid cross entropy loss function: <img src="img/sigmoid_cross_entropy.png" alt="sigmoid cross entropy loss function" width="200"/>
+        6) output a volume of 192 × 192 × 200 of real values
+    * VRN - Guided architecture is indicated as follows: <img src="img/vrn_guided" alt="VRN - Guided architecture" width="200"/>
+
+#### Extended challenges aroused from Animal facial reconstruction ####
 To deliver a real-time computable, superiority in terms of visual quality, diversity, and scalability framework, the following methods are being proposed for this project:
 
 1) Proposing the usage of StarGAN v2, a single framework that tackles both and shows significantly improved results over the baselines.  [5]
@@ -58,7 +80,6 @@ To deliver a real-time computable, superiority in terms of visual quality, diver
 6) possible Principal Component Analysis Problem Formulation
 6) Sliding Windows
 
-#### Extended challenges aroused from Animal facial reconstruction ####
 
 #### 💡 Solution
 
@@ -78,7 +99,7 @@ Even more so we think this has a potential to be using the gaming industry, wher
 - **CNN Regression**: The model uses a CNN to regress the 3D model from the input images. This is a very important feature since we want to be able to reconstruct the animal from multiple images<a href="#paper2"> [2]</a><a href="#paper3"> [3]</a><a href="#paper4"> [4]</a>.
 
 <p align="center">
-    <img src="sparse_3D_recon.jpeg" alt="3D face model">
+    <img src="img/sparse_3D_recon.jpeg" alt="3D face model">
     <br>
     From paper <a href="#paper1"> [1]</a>
 </p>
