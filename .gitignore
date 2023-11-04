@@ -6,3 +6,7 @@ Introduction Texts/~$ML project information_vs2 (2).pptx
 # ignore .idea folder
 .idea
 
+# ignore operating system files
+.DS_Store
+Thumbs.db
+```
