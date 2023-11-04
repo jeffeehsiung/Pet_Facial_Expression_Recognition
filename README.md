@@ -67,7 +67,7 @@ The principle algorithm for this project is Neural Networks, where all the remai
     * **VRN - Guided architecture** 
     <br>
 <p align="center">
-    <img src="img/sigmoid_cross_entropy.png" alt="sigmoid cross entropy loss function" width="100" style="max-width: 30%;">
+    <img src="img/sigmoid_cross_entropy.png" alt="sigmoid cross entropy loss function" width="100">
     <br>
     Sigmoid cross entropy loss function<a href="#paper6">[6]</a>
 </p>
