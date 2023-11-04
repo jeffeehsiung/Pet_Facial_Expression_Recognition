@@ -66,14 +66,12 @@ The principle algorithm for this project is Neural Networks, where all the remai
         6) output a volume of 192 × 192 × 200 of real values
 
         <img src="img/sigmoid_cross_entropy.png" alt="sigmoid cross entropy loss function" width="100" style="display: block; margin: 0 auto"/>
-        <br>
         Sigmoid cross entropy loss function<a href="#paper6"> [6]</a>
         
 
     * **VRN - Guided architecture** 
-    <img src="img/vrn_guided.png" alt="VRN - Guided architecture" width="400" style="display: block; margin: 0 auto"/>
-    <br>
-    VRN - Guided architecture<a href="#paper6"> [6]</a>
+        <img src="img/vrn_guided.png" alt="VRN - Guided architecture" width="400" style="display: block; margin: 0 auto"/>
+        VRN - Guided architecture<a href="#paper6"> [6]</a>
 
 #### Extended challenges aroused from Animal facial reconstruction ####
 1) To develop an animal facial landmark model, we can try utlizing the Style encoder and possibly Mapping Network proposed in StarGAN v2 model <a href="#paper5"> [5]</a>. The mapping network learns to transform random Gaussian noise into a style code, while the encoder learns to extract the style code from a given reference image.
