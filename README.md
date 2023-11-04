@@ -36,22 +36,19 @@
 
 * As to conventional methodological challenges such as establishing dense correspondences across large facial poses, expressions, and non-uniform illumination, these methods in general requires complex pipelines and solving non-convex difficult optimization problems for both model building (during training) and model fitting (during testing)
 
-* However, in this project, we will utilize the Convolutional Neural Network (CNN) framework proposed in <a href="#paper7"> [7]</a> to address many of these limitations by training the model on appropriate dataset consisting of 2D images and 3D facial models or scans.
+* However, in this project, we will utilize the Convolutional Neural Network (CNN) framework proposed in <a href="#paper6"> [6]</a> to address many of these limitations by training the model on appropriate dataset consisting of 2D images and 3D facial models or scans.
 
 
 #### Extended challenges aroused from Animal facial reconstruction ####
 * To extract correctly the animal facial model, in this project we simplify our tasks by applying the windowing method on the animal image datasets that only animals faces contained in a small window with less background interference of natural habitat is to be processed.
 
-* Additional oncerns involves multiple-domain image-to-image translation model. A good model should learn a mapping between different visual domains satisfying the following properties: 
-    1) diversity of generated images 
-    2) scalability over multiple domains. 
-Existing methods address either of the issues leading to limited diversity or multiple models for all domains. 
-* Domain implies a set of images that can be grouped as a visually distinctive category, where each image has a unique appearance which we call style.
+* Additional oncerns involves multiple-domain image-to-image translation model. A good model should learn a mapping between different visual domains satisfying the scalability over multiple domains. 
+* Domain implies a set of images that can be grouped as a visually distinctive category, where each image has a unique appearance which we call style. In the project context, challenge would be to transform the facial landmakrs model that is suitable for human domain to one for animal domain.
 
 #### 🧮 Methods
 The principle algorithm for this project is Neural Networks, where all the remaining methods are to assist in optimizaing neural network computation efficiency and to minimize error between the expected output and the actual output.
 #### 2D to 3D facial reconstruction ####
-* **CNN** : direct regression of a volumetric 3D facial geometry representation from a single 2D image <a href="#paper7"> [7]</a> based on the “hourglass network”.
+* **CNN** : direct regression of a volumetric 3D facial geometry representation from a single 2D image <a href="#paper6"> [6]</a> based on the “hourglass network”.
 - **The CNN architecture feaures** 
     1) working with just a single 2D facial image that does not require accurate alignment nor establishes dense correspondence between images
     2) works for arbitrary facial poses and expressions, and can be used to reconstruct the whole 3D facial geometry (including the non-visible parts of the face) bypassing the construction (during training) and fitting (during testing) of a 3D Morphable Model (3DMM).
@@ -69,26 +66,20 @@ The principle algorithm for this project is Neural Networks, where all the remai
             <p align= "center">
             <img src="img/sigmoid_cross_entropy.png" alt="sigmoid cross entropy loss function" width="100"/>
             </br>
-            Sigmoid cross entropy loss function <a href="#paper7"> [7]</a>
+            Sigmoid cross entropy loss function <a href="#paper6"> [6]</a>
             </p>
         6) output a volume of 192 × 192 × 200 of real values
     * **VRN - Guided architecture** 
         <p align= "center">
         <img src="img/vrn_guided.png" alt="VRN - Guided architecture" width="400"/>
         </br>
-         VRN - Guided architecture<a href="#paper7"> [7]</a>
+         VRN - Guided architecture<a href="#paper6"> [6]</a>
         </p>
 
 #### Extended challenges aroused from Animal facial reconstruction ####
-To deliver a real-time computable, superiority in terms of visual quality, diversity, and scalability framework, the following methods are being proposed for this project:
+1) To develop an animal facial landmark model, we can try utlizing the Style encoder and possibly Mapping Network proposed in StarGAN v2 model <a href="#paper5"> [5]</a>. The mapping network learns to transform random Gaussian noise into a style code, while the encoder learns to extract the style code from a given reference image.
+2) Zhang et al. <a href="#paper7"> [7]</a> developed a structural hourglass network to predict the facial landmarks with corresponding heatmaps. The CNN based facial landmarks localization gets the high-level features from the face and predicts all the keypoints simultaneously, which method may help to construct the auto-detected animal facial landmark model.
 
-1) Proposing the usage of StarGAN v2, a single framework that tackles both and shows significantly improved results over the baselines.  [5]
-2) Utilize the readily available high-quality animal faces datasets with large inter- and intra-domain differences to train and validate our design.
-3) _not yet finihsed_  [6]
-4) _not yet finihsed_ Volumetric regression [7]
-5) Neural networks linear regression
-6) possible Principal Component Analysis Problem Formulation
-6) Sliding Windows
 
 
 #### 💡 Solution
@@ -139,12 +130,12 @@ Even more so we think this has a potential to be using the gaming industry, wher
 [![DOI:10.1109/CVPR42600.2020.00821](https://zenodo.org/badge/DOI/10.1109/CVPR42600.2020.008212.svg)](https://doi.org/10.1109/CVPR42600.2020.00821)
 
 <a name="paper6"></a>
-[6] *Y. -Y. Liang and Y. -G. Wang*, **PFC-UNIT: Unsupervised Image-to-Image Translation with Pre-Trained Fine-Grained Classification**. 2023 IEEE International Conference on Image Processing (ICIP), Kuala Lumpur, Malaysia, 2023, pp. 1175-1179.
-[![DOI:10.1109/ICIP49359.2023.10222166](https://zenodo.org/badge/DOI/10.1109/ICIP49359.2023.10222166.svg)](https://doi.org/10.1109/ICIP49359.2023.10222166)
+[6] *A. S. Jackson, A. Bulat, V. Argyriou and G. Tzimiropoulos*, **Large Pose 3D Face Reconstruction from a Single Image via Direct Volumetric CNN Regression**, 2017 IEEE International Conference on Computer Vision (ICCV), Venice, Italy, 2017, pp. 1031-1039, doi: 10.1109/ICCV.2017.117.
+[![DOI:10.1109/ICCV.2017.117](https://zenodo.org/badge/DOI/10.1109/ICCV.2017.117.svg)](https://doi.org/10.1109/ICCV.2017.117)
 
 <a name="paper7"></a>
-[7] *A. S. Jackson, A. Bulat, V. Argyriou and G. Tzimiropoulos*, **Large Pose 3D Face Reconstruction from a Single Image via Direct Volumetric CNN Regression**, 2017 IEEE International Conference on Computer Vision (ICCV), Venice, Italy, 2017, pp. 1031-1039, doi: 10.1109/ICCV.2017.117.
-[![DOI:10.1109/ICCV.2017.117](https://zenodo.org/badge/DOI/10.1109/ICCV.2017.117.svg)](https://doi.org/10.1109/ICCV.2017.117)
+[7] *J. Zhang, H. Hu and S. Feng*, **Robust Facial Landmark Detection via Heatmap-Offset Regression**, in IEEE Transactions on Image Processing, vol. 29, pp. 5050-5064, 2020.
+[![DOI:10.1109/TIP.2020.2976765](https://zenodo.org/badge/DOI/10.1109/TIP.2020.2976765.svg)](https://doi.org/10.1109/TIP.2020.2976765)
 
 ## 📊 Datasets
 * [Kaggle face recognition dataset collection](https://www.kaggle.com/datasets?search=fac&tags=13207-Computer+Vision) 
@@ -154,3 +145,4 @@ Even more so we think this has a potential to be using the gaming industry, wher
 ## 💻 Project Source Code
 * [3D Face Reconstruction using CNN](https://github.com/AaronJackson/vrn) 
 * [500 ML Project](https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code)
+* [STargan V2: Mapping Network and Style Encoder](https://github.com/clovaai/stargan-v2/blob/master/core/model.py)
