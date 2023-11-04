@@ -66,12 +66,12 @@ The principle algorithm for this project is Neural Networks, where all the remai
         6) output a volume of 192 × 192 × 200 of real values
 
         <img src="img/sigmoid_cross_entropy.png" alt="sigmoid cross entropy loss function" width="100" style="display: block; margin: 0 auto"/>
-        Sigmoid cross entropy loss function<a href="#paper6"> [6]</a>
+        <!-- Sigmoid cross entropy loss function<a href="#paper6"> [6]</a> -->
         
 
     * **VRN - Guided architecture** 
         <img src="img/vrn_guided.png" alt="VRN - Guided architecture" width="400" style="display: block; margin: 0 auto"/>
-        VRN - Guided architecture<a href="#paper6"> [6]</a>
+        <!-- VRN - Guided architecture<a href="#paper6"> [6]</a> -->
 
 #### Extended challenges aroused from Animal facial reconstruction ####
 1) To develop an animal facial landmark model, we can try utlizing the Style encoder and possibly Mapping Network proposed in StarGAN v2 model <a href="#paper5"> [5]</a>. The mapping network learns to transform random Gaussian noise into a style code, while the encoder learns to extract the style code from a given reference image.
@@ -96,13 +96,11 @@ Even more so we think this has a potential to be using the gaming industry, wher
 
 - **CNN Regression**: The model uses a CNN to regress the 3D model from the input images. This is a very important feature since we want to be able to reconstruct the animal from multiple images<a href="#paper2"> [2]</a><a href="#paper3"> [3]</a><a href="#paper4"> [4]</a>.
 
-<!-- <p align="center">
+<p align="center">
     <img src="img/sparse_3D_recon.jpeg" alt="3D face model">
     <br>
     From paper <a href="#paper1"> [1]</a>
-</p> -->
-<img src="img/sparse_3D_recon.jpeg" alt="3D face model" style="display: block; margin: 0 auto"/>
-From paper <a href="#paper1"> [1]</a>
+</p>
 
 # 📚 Resources
 
