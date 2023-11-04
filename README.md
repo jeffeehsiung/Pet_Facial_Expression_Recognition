@@ -38,11 +38,17 @@ The next challenge we are tackling is the algrithm modeling of animal. As to mon
 
 
 #### 🧮 Methods
+The principle algorithm for this project is Neural Networks, where all the remaining methods are to assist in optimizaing neural network computation efficiency and to minimize error between the expected output and the actual output.
+
 To deliver a real-time computable, superiority in terms of visual quality, diversity, and scalability framework, the following methods are being proposed for this project:
+
 1) Proposing the usage of StarGAN v2, a single framework that tackles both and shows significantly improved results over the baselines.  [5]
 2) Utilize the readily available high-quality animal faces datasets with large inter- and intra-domain differences to train and validate our design.
 3) _not yet finihsed_  [6]
 4) _not yet finihsed_ Volumetric regression [7]
+5) Neural networks linear regression
+6) possible Principal Component Analysis Problem Formulation
+6) Sliding Windows
 
 #### 💡 Solution
 
@@ -72,7 +78,8 @@ Even more so we think this has a potential to be using the gaming industry, wher
 ## 📑 Papers
 
 <a name="paper1"></a>
-[1] (Wood, E. et al. (2022). 3D Face Reconstruction with Dense Landmarks. In: Avidan, S., Brostow, G., Cissé, M., Farinella, G.M., Hassner, T. (eds) Computer Vision – ECCV 2022. ECCV 2022. Lecture Notes in Computer Science, vol 13673. Springer, Cham. https://doi.org/10.1007/978-3-031-19778-9_10)
+[1] *Wood, E. et al. (2022). **3D Face Reconstruction with Dense Landmarks**. In: Avidan, S., Brostow, G.*, Cissé, M., Farinella, G.M., Hassner, T. (eds) Computer Vision – ECCV 2022. ECCV 2022. Lecture Notes in Computer Science, vol 13673. Springer, Cham.. 
+[![DOI:10.1007/978-3-031-19778-9_10](https://zenodo.org/badge/DOI/10.1007/978-3-031-19778-9_10.svg)](https://doi.org/10.1007/978-3-031-19778-9_10)
 
 <a name="paper2"></a>
 [2] (Lawin, F. J., Moeller, M.-M., & Petersson, L. (2017). MVSNet: Depth Inference for Unstructured Multi-view Stereo. Computer Vision and Pattern Recognition (CVPR). https://arxiv.org/abs/1703.06870)
