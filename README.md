@@ -13,20 +13,28 @@
     * [💻 Project Source Code](#💻-project-source-code)
 
 
-## 🚀 Motivation and explenation of title
+## 🚀 Motivation
 
-First of all the motivation behind our project is rooted in the love for animals and the intrest in expanding our knowledge of field of computer vision. When browdsing the web for ideas we came across human reconstruction, and thought why not with animals.
+😎 The motivation behind our project is rooted in the love for animals and the intrest in expanding our knowledge of field of computer vision. 
 
-With an aim to apply computer vision using machine learning technique on animals model reconstruction from 2D to 3D, and following the inpsirations derived from one, Little Genius Application (referenced as follows), and two, Apple's vision in realizing mixed-reality, or augmented reality, world, we decided to research and develop the less explored computer vision program for animals. Eventually enabling including the beloved pet into our digitized analog world that one can for example monitor the health and the motion of their pets in real-time, interact with their at-home pet dyanimcally, or relive vivdly the moments with ones' past pets by storig digitized model of its behaviors in memory.
+💭 When browdsing the web for ideas we came across human facila and body 3D reconstruction for extended reality including AR and VR.
+
+🐈 Following the further inpsirations from one, Little Genius Application (youtube video link), and two, Apple's vision in realizing mixed-reality, or augmented reality, world, we decided to research and develop the less explored computer vision program for animals.
 
 <!-- add the large files -->
-[![Watch the video](https://img.youtube.com/vi/7wLLgFCjW7I/maxresdefault.jpg)](https://youtu.be/7wLLgFCjW7I)
+[![Little Genius Application Youtube Link](https://img.youtube.com/vi/7wLLgFCjW7I/maxresdefault.jpg)](https://youtu.be/7wLLgFCjW7I)
+
+
+🐶 In this project, we aim to reconstruct 3D animals facial model from 2D target images to 3D which eventually would stinulate and enable application development revolving around interacting and involving digitized 3D pets and wildlife experiences in the extended reality 🐕‍🦺🐈🐅🐧🦁🦭.
+
+👓 Applications which brings the beloved pet into the digitized analog world are, for example, in pet care industry, where one can through light-weighted AR glasses monitor the health and the motion of their pets in real-time, interact with their at-home pet dyanimcally. Similarity, in the general pet-afterlife industry, one can relive vivdly the moments with their past pets in such extended realty by initially storing its digitized behavioral model the extended reality cloud memory. Or, at last, for all the potenail 3D extended world development, wildlife and domesticated animals cab be included as well.
 
 ### 🤔 What problem are we tackling
 
-Traditional 3D reconstruction methods ofter require expensive and time-consuming technology, like 3D-scanning <a href="https://en.wikipedia.org/wiki/3D_scanning">Source to Wikipedia</a>, or even manual reconstriuction in 3D software (Inventor, AutoCad, Solidworks).
-Which are not feasible for large-scale applications or capturing animals in their natural habitats.
+#### 2D to 3D facial reconstruction ####
+Traditional 3D reconstruction methods ofter require expensive and time-consuming technology, like 3D-scanning <a href="https://en.wikipedia.org/wiki/3D_scanning">Source to Wikipedia</a>, or even manual reconstriuction in 3D software (Inventor, AutoCad, Solidworks).Which are not feasible for large-scale applications or capturing animals in their natural habitats.
 
+#### Extended challenges aroused from Animal facial reconstruction ####
 However, we can simplify our tasks in fitting the time constraints of this project that only animals from avaialbe datasets presenting less interference from the background of natural habitat are to be reconstructed.
 
 Concerns for 2D to 3D translation may result from that while a good image-to-image translation model should learn a mapping between different visual domains satisfying the following properties: 
@@ -39,7 +47,7 @@ The next challenge we are tackling is the algrithm modeling of animal. As to mon
 
 #### 🧮 Methods
 The principle algorithm for this project is Neural Networks, where all the remaining methods are to assist in optimizaing neural network computation efficiency and to minimize error between the expected output and the actual output.
-
+#### 2D to 3D facial reconstruction ####
 To deliver a real-time computable, superiority in terms of visual quality, diversity, and scalability framework, the following methods are being proposed for this project:
 
 1) Proposing the usage of StarGAN v2, a single framework that tackles both and shows significantly improved results over the baselines.  [5]
@@ -49,6 +57,8 @@ To deliver a real-time computable, superiority in terms of visual quality, diver
 5) Neural networks linear regression
 6) possible Principal Component Analysis Problem Formulation
 6) Sliding Windows
+
+#### Extended challenges aroused from Animal facial reconstruction ####
 
 #### 💡 Solution
 
