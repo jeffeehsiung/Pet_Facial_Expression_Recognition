@@ -65,17 +65,19 @@ The principle algorithm for this project is Neural Networks, where all the remai
         * The volumetric regression uses the sigmoid cross entropy loss function:
         6) output a volume of 192 × 192 × 200 of real values
     * **VRN - Guided architecture** 
+    <br>
 <p align="center">
-    <img src="img/sigmoid_cross_entropy.png" alt="sigmoid cross entropy loss function" style="max-width: 30%;">
+    <img src="img/sigmoid_cross_entropy.png" alt="sigmoid cross entropy loss function" width="100" style="max-width: 30%;">
     <br>
     Sigmoid cross entropy loss function<a href="#paper6">[6]</a>
 </p>
+<br>
 <p align="center">
     <img src="img/vrn_guided.png" alt="VRN - Guided architecturen">
     <br>
     VRN - Guided architecture<a href="#paper6">[6]</a>
 </p>
-
+<br>
 #### Extended challenges aroused from Animal facial reconstruction ####
 1) To develop an animal facial landmark model, we can try utlizing the Style encoder and possibly Mapping Network proposed in StarGAN v2 model <a href="#paper5"> [5]</a>. The mapping network learns to transform random Gaussian noise into a style code, while the encoder learns to extract the style code from a given reference image.
 2) Zhang et al. <a href="#paper7"> [7]</a> developed a structural hourglass network to predict the facial landmarks with corresponding heatmaps. The CNN based facial landmarks localization gets the high-level features from the face and predicts all the keypoints simultaneously, which method may help to construct the auto-detected animal facial landmark model.
