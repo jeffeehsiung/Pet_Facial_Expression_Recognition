@@ -69,14 +69,14 @@ The principle algorithm for this project is Neural Networks, where all the remai
             <p align= "center">
             <img src="img/sigmoid_cross_entropy.png" alt="sigmoid cross entropy loss function" width="100"/>
             </br>
-            <a href="#paper7"> [7]</a>
+            Sigmoid cross entropy loss function <a href="#paper7"> [7]</a>
             </p>
         6) output a volume of 192 × 192 × 200 of real values
     * **VRN - Guided architecture** 
         <p align= "center">
         <img src="img/vrn_guided.png" alt="VRN - Guided architecture" width="400"/>
         </br>
-        <a href="#paper7"> [7]</a>
+         VRN - Guided architecture<a href="#paper7"> [7]</a>
         </p>
 
 #### Extended challenges aroused from Animal facial reconstruction ####
