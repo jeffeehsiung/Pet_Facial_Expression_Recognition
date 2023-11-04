@@ -65,9 +65,11 @@ The principle algorithm for this project is Neural Networks, where all the remai
         3) train a stacked hourglass network which accepts guidance from landmarks during training and inference
         4) stacks these with the original image where each rectangle is a residual module of 256 feature 
         5) fed the stack into the reconstruction network to directly regresses the volume: 
-        * * The volumetric regression uses the sigmoid cross entropy loss function: <img src="img/sigmoid_cross_entropy.png" alt="sigmoid cross entropy loss function" width="200"/>
+        * The volumetric regression uses the sigmoid cross entropy loss function: 
+            <img src="img/sigmoid_cross_entropy.png" alt="sigmoid cross entropy loss function" width="200"/>
         6) output a volume of 192 × 192 × 200 of real values
-    * VRN - Guided architecture is indicated as follows: <img src="img/vrn_guided" alt="VRN - Guided architecture" width="200"/>
+    * VRN - Guided architecture is indicated as follows: 
+        <img src="img/vrn_guided" alt="VRN - Guided architecture" width="200"/>
 
 #### Extended challenges aroused from Animal facial reconstruction ####
 To deliver a real-time computable, superiority in terms of visual quality, diversity, and scalability framework, the following methods are being proposed for this project:
