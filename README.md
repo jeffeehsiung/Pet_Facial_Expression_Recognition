@@ -82,22 +82,28 @@ Even more so we think this has a potential to be using the gaming industry, wher
 [![DOI:10.1007/978-3-031-19778-9_10](https://zenodo.org/badge/DOI/10.1007/978-3-031-19778-9_10.svg)](https://doi.org/10.1007/978-3-031-19778-9_10)
 
 <a name="paper2"></a>
-[2] (Lawin, F. J., Moeller, M.-M., & Petersson, L. (2017). MVSNet: Depth Inference for Unstructured Multi-view Stereo. Computer Vision and Pattern Recognition (CVPR). https://arxiv.org/abs/1703.06870)
+[2] *Lawin, F. J., Moeller, M.-M., & Petersson, L*. (2017). **MVSNet: Depth Inference for Unstructured Multi-view Stereo.** Computer Vision and Pattern Recognition (CVPR).
+[![arXiv](https://img.shields.io/badge/arXiv-1703.06870-b31b1b.svg)](https://arxiv.org/abs/1703.06870)
 
 <a name="paper3"></a>
-[3] (Fanzi Wu, Linchao Bao, Yajing Chen, Yonggen Ling, Yibing Song, Songnan Li, King Ngi Ngan, Wei Liu; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2019, pp. 959-968)
+[3] *Fanzi Wu, Linchao Bao, Yajing Chen, Yonggen Ling, Yibing Song, Songnan Li, King Ngi Ngan, Wei Liu*. (2019). **MVF-Net: Multi-View 3D Face Morphable Model Regression**. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2019, pp. 959-968
+[![arXiv](https://img.shields.io/badge/arXiv-1703.06870-b31b1b.svg)](https://arxiv.org/abs/1703.06870)
 
 <a name="paper4"></a>
-[4] (Vasquez-Gomez, J.I., Troncoso, D., Becerra, I. et al. Next-best-view regression using a 3D convolutional neural network. Machine Vision and Applications 32, 42 (2021). https://doi.org/10.1007/s00138-020-01166-2)
+[4] *Vasquez-Gomez, J.I., Troncoso, D., Becerra, I. et al*. **Next-best-view regression using a 3D convolutional neural network**. Machine Vision and Applications 32, 42 (2021).
+[![DOI:10.1007/s00138-020-01166-2](https://zenodo.org/badge/DOI/10.1007/s00138-020-01166-2.svg)](https://doi.org/10.1007/s00138-020-01166-2)
 
 <a name="paper5"></a>
-[5] (Y. Choi, Y. Uh, J. Yoo and J. -W. Ha, "StarGAN v2: Diverse Image Synthesis for Multiple Domains," 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Seattle, WA, USA, 2020, pp. 8185-8194, doi: 10.1109/CVPR42600.2020.00821.)
+[5] *Y. Choi, Y. Uh, J. Yoo and J. -W. Ha*, **StarGAN v2: Diverse Image Synthesis for Multiple Domains**. 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Seattle, WA, USA, 2020, pp. 8185-8194.
+[![DOI:10.1109/CVPR42600.2020.00821](https://zenodo.org/badge/DOI/10.1109/CVPR42600.2020.008212.svg)](https://doi.org/10.1109/CVPR42600.2020.00821)
 
 <a name="paper6"></a>
-[6] (Y. -Y. Liang and Y. -G. Wang, "PFC-UNIT: Unsupervised Image-to-Image Translation with Pre-Trained Fine-Grained Classification," 2023 IEEE International Conference on Image Processing (ICIP), Kuala Lumpur, Malaysia, 2023, pp. 1175-1179, doi: 10.1109/ICIP49359.2023.10222166.)
+[6] *Y. -Y. Liang and Y. -G. Wang*, **PFC-UNIT: Unsupervised Image-to-Image Translation with Pre-Trained Fine-Grained Classification**. 2023 IEEE International Conference on Image Processing (ICIP), Kuala Lumpur, Malaysia, 2023, pp. 1175-1179.
+[![DOI:10.1109/ICIP49359.2023.10222166](https://zenodo.org/badge/DOI/10.1109/ICIP49359.2023.10222166.svg)](https://doi.org/10.1109/ICIP49359.2023.10222166)
 
 <a name="paper7"></a>
-[7] (A. S. Jackson, A. Bulat, V. Argyriou and G. Tzimiropoulos, "Large Pose 3D Face Reconstruction from a Single Image via Direct Volumetric CNN Regression," 2017 IEEE International Conference on Computer Vision (ICCV), Venice, Italy, 2017, pp. 1031-1039, doi: 10.1109/ICCV.2017.117.)
+[7] *A. S. Jackson, A. Bulat, V. Argyriou and G. Tzimiropoulos*, **Large Pose 3D Face Reconstruction from a Single Image via Direct Volumetric CNN Regression**, 2017 IEEE International Conference on Computer Vision (ICCV), Venice, Italy, 2017, pp. 1031-1039, doi: 10.1109/ICCV.2017.117.
+[![DOI:10.1109/ICCV.2017.117](https://zenodo.org/badge/DOI/10.1109/ICCV.2017.117.svg)](https://doi.org/10.1109/ICCV.2017.117)
 
 ## 📊 Datasets
 * [Kaggle face recognition dataset collection](https://www.kaggle.com/datasets?search=fac&tags=13207-Computer+Vision) 
