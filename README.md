@@ -63,16 +63,16 @@ The principle algorithm for this project is Neural Networks, where all the remai
         4) stacks these with the original image where each rectangle is a residual module of 256 feature 
         5) fed the stack into the reconstruction network to directly regresses the volume: 
         * The volumetric regression uses the sigmoid cross entropy loss function:
-            <p align= "center">
-            <img src="img/sigmoid_cross_entropy.jpeg" alt="sigmoid cross entropy loss function" width="100"/>
-            </br>
-            Sigmoid cross entropy loss function <a href="#paper6"> [6]</a>
-            </p>
+        <p align="center">
+        <img src="img/sigmoid_cross_entropy.jpeg" alt="sigmoid cross entropy loss function" width="100"/>
+        <br>
+        Sigmoid cross entropy loss function <a href="#paper6"> [6]</a>
+        </p>
         6) output a volume of 192 × 192 × 200 of real values
     * **VRN - Guided architecture** 
-        <p align= "center">
+        <p align="center">
         <img src="img/vrn_guided.jpeg" alt="VRN - Guided architecture" width="400"/>
-        </br>
+        <br>
          VRN - Guided architecture<a href="#paper6"> [6]</a>
         </p>
 
