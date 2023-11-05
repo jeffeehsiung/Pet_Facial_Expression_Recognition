@@ -82,6 +82,14 @@ The principle algorithm for this project is Neural Networks, where all the remai
 #### Extended challenges aroused from Animal facial reconstruction ####
 1) To develop an animal facial landmark model, we can try utlizing the Style encoder and possibly Mapping Network proposed in StarGAN v2 model <a href="#paper5"> [5]</a>. The mapping network learns to transform random Gaussian noise into a style code, while the encoder learns to extract the style code from a given reference image.
 2) Zhang et al. <a href="#paper7"> [7]</a> developed a structural hourglass network to predict the facial landmarks with corresponding heatmaps. The CNN based facial landmarks localization gets the high-level features from the face and predicts all the keypoints simultaneously, which method may help to construct the auto-detected animal facial landmark model.
+3) Additionally, there is an existing automated python model for facial landmark detection between species as indicated in <a href="#💻-project-source-code"> Facial Landmark and Image Morhphine: Species <a> which we can reference to. The repository contains Python codes to detect facial landmarks of people and some animals as indicated in below figure. After finding these points, face morphing is applied to images by using delaunay triangulation.
+<br>
+<p align="center">
+    <img src="img/facial_landmark.png" alt="Facial Landmark Output" width="600">
+    <br>
+    <a href="#facial_landmark">Facial Landmark Output</a>
+</p>
+<br>
 
 
 
@@ -149,3 +157,5 @@ Even more so we think this has a potential to be using the gaming industry, wher
 * [3D Face Reconstruction using CNN](https://github.com/AaronJackson/vrn) 
 * [500 ML Project](https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code)
 * [STargan V2: Mapping Network and Style Encoder](https://github.com/clovaai/stargan-v2/blob/master/core/model.py)
+<a name="facial_landmark"></a>
+* [Facial Landmark and Image Morhphine: Species](https://github.com/emreslyn/facial_landmark_and_image_morphing)
