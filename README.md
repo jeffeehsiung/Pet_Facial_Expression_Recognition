@@ -1,3 +1,36 @@
+# Trello
+
+Link to trello is [here](https://trello.com/invite/b/PDlvtlED/ATTI80751ddf1d8b0471659f54c7dce4e5f7BDA5DE8F/funnymodel)
+
+# What needs to change?
+
+- Change title : Jeffee
+- Change motivation : Jeffee ✅ (done)
+- Problem we tackling : Joerie
+- Methods : Jeffee
+- Solution : Joerie
+- Explenation of title : Joerie 
+- Papers : Jeffee
+- Update images and videos : Joerie
+- Restructure readme : Jeffee
+
+# What do we need to have unti next milestone?
+
+We need to:
+- Go through [This part](#💻-project-source-code) first repo and see if we can use it for our project
+- Go through the lectures for nural networks
+- What steps are we going to use?
+- Additionally, YouTube tutorials are very useful
+  - share the link if you find some interesting
+- Start coding
+  - Make plan:
+    - who does what
+    - who does paper
+    - who does code
+    - who does poster
+- SHOW REUSE OF CODE FROM LABS
+- Get theory why use this blablalba 2 + 2 = 4
+
 # 🔍Efficient Multi-View 3D Model Reconstruction Using CNN Regression
 
 <!--TOC-->
