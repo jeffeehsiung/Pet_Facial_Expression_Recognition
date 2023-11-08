@@ -17,17 +17,17 @@
 
 😎 The motivation behind our project is rooted in the love for animals and the intrest in expanding our knowledge of field of computer vision. 
 
-💭 When browdsing the web for ideas we came across human facila and body 3D reconstruction for extended reality including AR and VR.
-
-🐈 Following the further inpsirations from one, Little Genius Application (youtube video link), and two, Apple's vision in realizing mixed-reality, or augmented reality, world, we decided to research and develop the less explored computer vision program for animals.
+💭 When browdsing the web for ideas we came across face detection and its application in 3D reconstruction for extended reality including AR and VR. Having this face detection idea in mind and having discovered that such methodology and research is less applied in the animal domain, we decided to evaluate the application possibilty of this CNN-regression-based image classification model on cats and dogs. Upon researching, a semi-commercialized real-world application, Little Genius Application (youtube video link), came up, proving the idea feasibility.
 
 <!-- add the large files -->
 [![Little Genius Application Youtube Link](https://img.youtube.com/vi/7wLLgFCjW7I/maxresdefault.jpg)](https://youtu.be/7wLLgFCjW7I)
 
 
-🐶 In this project, we aim to reconstruct 3D animals facial model from 2D target images to 3D which eventually would stinulate and enable application development revolving around interacting and involving digitized 3D pets and wildlife experiences in the extended reality 🐕‍🦺🐈🐅🐧🦁🦭.
+🐶 In this project, given the time constraint, we aim to based on the pets facial expression dataset <a name="pet's facial expression"></a> construct a model to firstly recognize the type of the pet and secondly classify the emotion of the pe into simply three class "happy","sad", and "angry", based on their facial expression. Hopefully contribute to the application development revolving around human-pet interactions in extended reality 🐕🐈.
 
-👓 Applications which brings the beloved pet into the digitized analog world are, for example, in pet care industry, where one can through light-weighted AR glasses monitor the health and the motion of their pets in real-time, interact with their at-home pet dyanimcally. Similarity, in the general pet-afterlife industry, one can relive vivdly the moments with their past pets in such extended realty by initially storing its digitized behavioral model the extended reality cloud memory. Or, at last, for all the potenail 3D extended world development, wildlife and domesticated animals cab be included as well.
+👓 Potential use cases
+* Facial expression recognition: The dataset can be used to train and evaluate models that can recognize the emotions of pets from their facial expressions. This can help pet owners understand their pets better and improve their well-being.
+* Pet identification: The dataset can be used to train and evaluate models that can identify the species and breed of pets from their face images.
 
 ### 🤔 What problem are we tackling
 
@@ -149,13 +149,12 @@ Even more so we think this has a potential to be using the gaming industry, wher
 [![DOI:10.1109/TIP.2020.2976765](https://zenodo.org/badge/DOI/10.1109/TIP.2020.2976765.svg)](https://doi.org/10.1109/TIP.2020.2976765)
 
 ## 📊 Datasets
-* [Kaggle face recognition dataset collection](https://www.kaggle.com/datasets?search=fac&tags=13207-Computer+Vision) 
-* [Kaggle Facial keypoint detection](https://www.kaggle.com/datasets/nagasai524/facial-keypoint-detection) 
+<a name="pet's facial expression"></a>
+* [Kaggle 🐶Pet's Facial Expression Image Dataset😸](https://www.kaggle.com/datasets/anshtanwar/pets-facial-expression-dataset/data) 
 * [Kaggle Animal faces](https://www.kaggle.com/datasets/andrewmvd/animal-faces/data) 
 
-## 💻 Project Source Code
-* [3D Face Reconstruction using CNN](https://github.com/AaronJackson/vrn) 
+## 💻 Project Inspiration
+* [CNN | Beginners | 🐶Pet's Expression Recognition](https://www.kaggle.com/code/anshtanwar/cnn-beginners-pet-s-expression-recognition) 
 * [500 ML Project](https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code)
-* [STargan V2: Mapping Network and Style Encoder](https://github.com/clovaai/stargan-v2/blob/master/core/model.py)
 <a name="facial_landmark"></a>
 * [Facial Landmark and Image Morhphine: Species](https://github.com/emreslyn/facial_landmark_and_image_morphing)
