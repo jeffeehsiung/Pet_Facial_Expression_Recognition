@@ -4,12 +4,11 @@ Link to trello is [here](https://trello.com/invite/b/PDlvtlED/ATTI80751ddf1d8b04
 
 # What needs to change?
 
-- Change title : Jeffee
-- Change motivation : Jeffee ✅ (done)
-- Problem we tackling : Joerie
-- Methods : Jeffee
-- Solution : Joerie
-- Explenation of title : Joerie 
+- Change title : Joerie ✅ (done)
+- Change motivation : Jeffee/Joerie ✅ (done)
+- Problem we tackling : Joerie ✅ (done)
+- Methods : Jeffee/Joerie (Joerie part done)
+- Solution : Joerie ✅ (done)
 - Papers : Jeffee
 - Update images and videos : Joerie
 - Restructure readme : Jeffee
@@ -31,7 +30,7 @@ We need to:
 - SHOW REUSE OF CODE FROM LABS
 - Get theory why use this blablalba 2 + 2 = 4
 
-# 🔍Efficient Multi-View 3D Model Reconstruction Using CNN Regression
+# 🔍Bridging the Gap: Pet Facial Expression Recognition for Enhanced XR Human-Pet Interactions
 
 <!--TOC-->
 
@@ -46,108 +45,40 @@ We need to:
     * [💻 Project Source Code](#💻-project-source-code)
 
 
-## 🚀 Motivation
+## 🤔Motivation: what problem are we tackling
 
-😎 The motivation behind our project is rooted in the love for animals and the intrest in expanding our knowledge of field of computer vision. 
+In extended reality (XR), the integration of pets into virtual spaces is has created for a wide range of new possiblities. However, there's still a significant void in understanding the emotianal nuances of pets in XR. We will try to enhance the technology by developing a model that (a) identifies between two different pet types (cats and dogs) and (b) classify between different facial expressions (happy, sad, and angry).
 
-💭 When browdsing the web for ideas we came across face detection and its application in 3D reconstruction for extended reality including AR and VR. Having this face detection idea in mind and having discovered that such methodology and research is less applied in the animal domain, we decided to evaluate the application possibilty of this CNN-regression-based image classification model on cats and dogs. Upon researching, a semi-commercialized real-world application, Little Genius Application (youtube video link), came up, proving the idea feasibility.
+Motivated by the growth of XR based technologies and the value of pets in human mental health, we will aim to integrate pets into XR. This will not only accommodate the preferences of the user in question but also enhances the overall immersive experience in human-pet interaction.
 
-<!-- add the large files -->
-[![Little Genius Application Youtube Link](https://img.youtube.com/vi/7wLLgFCjW7I/maxresdefault.jpg)](https://youtu.be/7wLLgFCjW7I)
+**Potential use case**
 
+Our model could find it's application in remote pet monitoring for healthcare assessment. For instance: by using 
+<a href="https://en.wikipedia.org/wiki/Remote_camera">trail cameras</a> biologists, researchers, or even hobbyist could remotely look at the emotial state of an animal; conclude distress; behavioural change and so forth. We think this model has huge potential, especially when this model could get extended to multiple animals and multiple emotions.  
 
-🐶 In this project, given the time constraint, we aim to based on the pets facial expression dataset <a name="pet's facial expression"></a> construct a model to firstly recognize the type of the pet and secondly classify the emotion of the pe into simply three class "happy","sad", and "angry", based on their facial expression. Hopefully contribute to the application development revolving around human-pet interactions in extended reality 🐕🐈.
+## 💡 Solution 
 
-👓 Potential use cases
-* Facial expression recognition: The dataset can be used to train and evaluate models that can recognize the emotions of pets from their facial expressions. This can help pet owners understand their pets better and improve their well-being.
-* Pet identification: The dataset can be used to train and evaluate models that can identify the species and breed of pets from their face images.
+**Pre-trained model**: Using a pre-trained CNN (e.g. ResNet for example Joerie uses this in his thesis as well) can be used as a base. These models have shown their success in image classifcation to capture feature vectors.
 
-### 🤔 What problem are we tackling
+**Custom model**: Using ML techinques/principles from the course we can make a customized CNN architecture with added convulutioonal layers and pool layers for feature extraction and spactial recudtion respectivily
 
-#### 2D to 3D facial reconstruction ####
-* Traditional 3D reconstruction methods ofter require expensive and time-consuming technology, like 3D-scanning <a href="https://en.wikipedia.org/wiki/3D_scanning">Source to Wikipedia</a>, or even manual reconstriuction in 3D software (Inventor, AutoCad, Solidworks), which are not feasible for large-scale applications or capturing animals in their natural habitats.
+## 🧮 Method
 
-* As to conventional methodological challenges such as establishing dense correspondences across large facial poses, expressions, and non-uniform illumination, these methods in general requires complex pipelines and solving non-convex difficult optimization problems for both model building (during training) and model fitting (during testing)
-
-* However, in this project, we will utilize the Convolutional Neural Network (CNN) framework proposed in <a href="#paper6"> [6]</a> to address many of these limitations by training the model on appropriate dataset consisting of 2D images and 3D facial models or scans.
+Our solution will have the following cronological steps
 
 
-#### Extended challenges aroused from Animal facial reconstruction ####
-* To extract correctly the animal facial model, in this project we simplify our tasks by applying the windowing method on the animal image datasets that only animals faces contained in a small window with less background interference of natural habitat is to be processed.
+1. Load data by storing each image path (e.g. "```list[x] = "/images/happy/dog15.png```") in a list and it's corresponding label in another (```list2[x] = "happy"```)
+2. Transform the lists into a dataframe
+3. Exokiratiry Data Analysis (EDA) and analyze data to get more insights (just like we did in all the labs, explore data get familiar with it)
+4. Make train, test, and validate sets
+5. Make Data Generator (DG) for Train, Test and Validate set. We can use Tensorflow Generator for it.
+6. Load the pre trained model; add some layers; compile. (here will our own code be insjected probaly)
+7. Evaluate the result by plotting results (also like in the labs)
 
-* Additional oncerns involves multiple-domain image-to-image translation model. A good model should learn a mapping between different visual domains satisfying the scalability over multiple domains. 
-* Domain implies a set of images that can be grouped as a visually distinctive category, where each image has a unique appearance which we call style. In the project context, challenge would be to transform the facial landmakrs model that is suitable for human domain to one for animal domain.
+## First result
 
-#### 🧮 Methods
-The principle algorithm for this project is Neural Networks, where all the remaining methods are to assist in optimizaing neural network computation efficiency and to minimize error between the expected output and the actual output.
-#### 2D to 3D facial reconstruction ####
-* **CNN** : direct regression of a volumetric 3D facial geometry representation from a single 2D image <a href="#paper6"> [6]</a> based on the “hourglass network”.
-- **The CNN architecture feaures** 
-    1) working with just a single 2D facial image that does not require accurate alignment nor establishes dense correspondence between images
-    2) works for arbitrary facial poses and expressions, and can be used to reconstruct the whole 3D facial geometry (including the non-visible parts of the face) bypassing the construction (during training) and fitting (during testing) of a 3D Morphable Model (3DMM).
-        * 3DMM is to estimates 3D facial structure from a single image using an iterative training process. However, it's prone to failure, requires careful initialization, and involves solving a slow, complex optimization problem.
-- **Volumetric Regression Networks (VRN) Method**
-    * discretizing the 3D space into voxels {w, h, d}, assigning a value of 1 to all points enclosed by the 3D facial scan, and 0 otherwise. 
-    * ${V_{whd}}$ is the ground truth for voxel {w, h, d} and is equal to 1, if voxel {w, h, d} belongs to the 3D volumetric representation of the face and 0 otherwise (i.e. it belongs to the background).
-    * **VRN guided by facial landmarks**
-        1) input an RGB image stacked with 68 channels, each containing a Gaussian (σ = 1, approximate diameter of 6 pixels) centred on each of the 68 landmarks.
-        2) detects the 2D projection of the 3D landmarks by performing a simpler face analysis task
-        3) train a stacked hourglass network which accepts guidance from landmarks during training and inference
-        4) stacks these with the original image where each rectangle is a residual module of 256 feature 
-        5) fed the stack into the reconstruction network to directly regresses the volume: 
-        * The volumetric regression uses the sigmoid cross entropy loss function:
-        6) output a volume of 192 × 192 × 200 of real values
-    * **VRN - Guided architecture** 
-    <br>
-<p align="center">
-    <img src="img/sigmoid_cross_entropy.png" alt="sigmoid cross entropy loss function" width="300">
-    <br>
-    Sigmoid cross entropy loss function<a href="#paper6">[6]</a>
-</p>
-<br>
-<p align="center">
-    <img src="img/vrn_guided.png" alt="VRN - Guided architecturen" width="600">
-    <br>
-    VRN - Guided architecture<a href="#paper6">[6]</a>
-</p>
-<br>
+blablabla
 
-#### Extended challenges aroused from Animal facial reconstruction ####
-1) To develop an animal facial landmark model, we can try utlizing the Style encoder and possibly Mapping Network proposed in StarGAN v2 model <a href="#paper5"> [5]</a>. The mapping network learns to transform random Gaussian noise into a style code, while the encoder learns to extract the style code from a given reference image.
-2) Zhang et al. <a href="#paper7"> [7]</a> developed a structural hourglass network to predict the facial landmarks with corresponding heatmaps. The CNN based facial landmarks localization gets the high-level features from the face and predicts all the keypoints simultaneously, which method may help to construct the auto-detected animal facial landmark model.
-3) Additionally, there is an existing automated python model for facial landmark detection between species as indicated in <a href="#💻-project-source-code"> Facial Landmark and Image Morhphine: Species <a> which we can reference to. The repository contains Python codes to detect facial landmarks of people and some animals as indicated in below figure. After finding these points, face morphing is applied to images by using delaunay triangulation.
-<br>
-<p align="center">
-    <img src="img/facial_landmark.png" alt="Facial Landmark Output" width="600">
-    <br>
-    <a href="#facial_landmark">Facial Landmark Output</a>
-</p>
-<br>
-
-
-
-#### 💡 Solution
-
-We will try to use the power of ML to make this possible.
-
-By doing so, researchers, biologist, vetnarie, and educatorscan easily access 3D images/models of animals for various purposes: anatomy, sick-ness behaviour, behavior in general, or even creating realistic simulations.
-
-Even more so we think this has a potential to be using the gaming industry, where 3D models are used to create realistic simulations of animals. Think about the MetaVerse, you want your pet to be in the game?  You don't want to spend hours creating it? Just take a few pictures of it and the game will create a 3D model of it.
-
-
-### 🧐 Explanation of title
-
- - **Efficient Multi-View**: The model is able to reconstruct the animal from multiple images. This is a very important feature since we want to be able to reconstruct the animal from multiple images.
- - **3D**: The model is able to reconstruct the animal in 3D. This is a very important feature since we want to be able to reconstruct the animal in 3D. (This will be in a simple sparce 3D face modeling format) see picture from paper below.
- - **Reconstruction**: Talks for itself
-
-- **CNN Regression**: The model uses a CNN to regress the 3D model from the input images. This is a very important feature since we want to be able to reconstruct the animal from multiple images<a href="#paper2"> [2]</a><a href="#paper3"> [3]</a><a href="#paper4"> [4]</a>.
-
-<p align="center">
-    <img src="img/sparse_3D_recon.jpeg" alt="3D face model">
-    <br>
-    From paper <a href="#paper1"> [1]</a>
-</p>
 
 # 📚 Resources
 
