@@ -1,12 +1,2 @@
-Introduction Texts/final-report-guidelines.docx
-Introduction Texts/Machine learning project topic searching guidelines(1).docx
-Introduction Texts/ML project information_vs2 (2).pptx
-Introduction Texts/~$ML project information_vs2 (2).pptx
-
-# ignore .idea folder
 .idea
 
-# ignore operating system files
-.DS_Store
-Thumbs.db
-```
