@@ -32,19 +32,16 @@ We need to:
 
 # 🔍Bridging the Gap: Pet Facial Expression Recognition for Enhanced XR Human-Pet Interactions
 
-<!--TOC-->
-
 <!-- TOC -->
 * [🔍Bridging the Gap: Pet Facial Expression Recognition for Enhanced XR Human-Pet Interactions](#bridging-the-gap-pet-facial-expression-recognition-for-enhanced-xr-human-pet-interactions)
   * [🤔Motivation: what problem are we tackling](#motivation-what-problem-are-we-tackling)
   * [💡 Solution](#-solution)
   * [🧮 Method](#-method)
-  * [📑 First result](#first-result)
+  * [📑 First result](#-first-result)
 * [📚 Resources](#-resources)
   * [📑 Papers](#-papers)
   * [📊 Datasets](#-datasets)
   * [💻 Project Inspiration](#-project-inspiration)
-<!-- TOC -->
 
 ## 🤔Motivation: what problem are we tackling
 
