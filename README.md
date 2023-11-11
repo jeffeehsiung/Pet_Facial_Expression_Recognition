@@ -4,14 +4,14 @@ Link to trello is [here](https://trello.com/invite/b/PDlvtlED/ATTI80751ddf1d8b04
 
 # What needs to change?
 
-- Change title : Joerie ✅ (done)
+- Change title : Jeffee (Joerie part done)
 - Change motivation : Jeffee/Joerie ✅ (done)
 - Problem we tackling : Joerie ✅ (done)
 - Methods : Jeffee/Joerie (Joerie part done)
-- Solution : Joerie ✅ (done)
+- Solution : Joerie (maybe add done)
 - Papers : Jeffee
-- Update images and videos : Joerie
-- Restructure readme : Jeffee
+- Update images and videos : Joerie ✅ (done)
+- Restructure readme : Jeffee / (Joerie part done)
 
 # What do we need to have unti next milestone?
 
