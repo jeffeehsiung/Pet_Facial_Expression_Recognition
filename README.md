@@ -37,7 +37,7 @@ We need to:
 <!-- TOC -->
 * [🔍Bridging the Gap: Pet Facial Expression Recognition for Enhanced XR Human-Pet Interactions](#bridging-the-gap-pet-facial-expression-recognition-for-enhanced-xr-human-pet-interactions)
   * [🤔Motivation: what problem are we tackling](#motivation-what-problem-are-we-tackling)
-  * [💡 Solution](#-solution-)
+  * [💡 Solution](#-solution)
   * [🧮 Method](#-method)
   * [📑 First result](#first-result)
 * [📚 Resources](#-resources)
@@ -57,7 +57,7 @@ Motivated by the growth of XR based technologies and the value of pets in human 
 Our model could find it's application in remote pet monitoring for healthcare assessment. For instance: by using 
 <a href="https://en.wikipedia.org/wiki/Remote_camera">trail cameras</a> biologists, researchers, or even hobbyist could remotely look at the emotial state of an animal; conclude distress; behavioural change and so forth. We think this model has huge potential, especially when this model could get extended to multiple animals and multiple emotions.  
 
-## 💡 Solution 
+## 💡 Solution
 
 **Pre-trained model**: Using a pre-trained CNN (e.g. ResNet for example Joerie uses this in his thesis as well) can be used as a base. These models have shown their success in image classifcation to capture feature vectors.
 
