@@ -34,16 +34,17 @@ We need to:
 
 <!--TOC-->
 
-* [🚀 Motivation and Explanation of Title](#🚀-motivation-and-explanation-of-title)
-    * [🤔 What problem are we tackling](#🤔-what-problem-are-we-tackling)
-        * [🧮 Methods](#🧮-methods)
-        * [💡 Solution](#💡-solution)
-    * [🧐 Explanation of title](#🧐-explanation-of-title)
-* [📚 Resources](#📚-resources)
-    * [📑 Papers](#📑-papers)
-    * [📊 Datasets](#📊-datasets)
-    * [💻 Project Source Code](#💻-project-source-code)
-
+<!-- TOC -->
+* [🔍Bridging the Gap: Pet Facial Expression Recognition for Enhanced XR Human-Pet Interactions](#bridging-the-gap-pet-facial-expression-recognition-for-enhanced-xr-human-pet-interactions)
+  * [🤔Motivation: what problem are we tackling](#motivation-what-problem-are-we-tackling)
+  * [💡 Solution](#-solution-)
+  * [🧮 Method](#-method)
+  * [📑 First result](#first-result)
+* [📚 Resources](#-resources)
+  * [📑 Papers](#-papers)
+  * [📊 Datasets](#-datasets)
+  * [💻 Project Inspiration](#-project-inspiration)
+<!-- TOC -->
 
 ## 🤔Motivation: what problem are we tackling
 
@@ -75,7 +76,7 @@ Our solution will have the following cronological steps
 6. Load the pre trained model; add some layers; compile. (here will our own code be insjected probaly)
 7. Evaluate the result by plotting results (also like in the labs)
 
-## First result
+## 📑 First result
 
 blablabla
 
