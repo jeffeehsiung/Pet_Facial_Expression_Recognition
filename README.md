@@ -75,7 +75,7 @@ def relu(z):
   <img src="img/sigmoid_and_ReLU_activation_function.png" alt="Sigmoid and ReLU activation function" width="400"/>
   <br>
   <strong>Fig. 1</strong>: Sigmoid and ReLU activation function<a name="paper3">[3]</a>
-</p>
+</p>![Alt text](image.png)
 
 **Softmax Regression**: Given that one output is selected as the predicted answer out of N outputs yielded by the multiclass neural network, softmax function is exploited to process the N outputs as a **linear vector 𝐳** and converts  𝐳  into a **probability distribution**. Each output after softmax application will range $\in[0,1]$ and will sum to 1. They can be interpreted as probabilities.
 <p align="center">
