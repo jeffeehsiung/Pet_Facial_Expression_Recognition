@@ -64,7 +64,7 @@ Our model could find it's application in remote pet monitoring for healthcare as
 **Baseline model**: One requirement for this project is to develop based on the taught/used code snippets. In our case, as the emotion classification on top of the cat and dog face recongition is a multicalss classification problem and that the nature of emotion having a zero state where there is no emotion and an continuous range of values, an activation function of **Rectified Linear Unit (ReLU)** in the **Neural Networks** would suit the purpose of the classifier better than of sigmoid. **sigmoid** is best for on/off binray situations. **The ReLU provides a continuous linear relationship**. Additionally it has an **'off' range** where the output is zero. The **"off"** or disable feature of the ReLU activation enables models to **stitch together linear segments to model complex non-linear functions**.
 
 **ReLU Activation Definition**
-$$a = \max(0,z) \quad\quad\text{\# ReLU function} \tag{1}$$
+$$a = \max(0,z)\tag{1}$$
 
 ```python
 def relu(z):
