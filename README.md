@@ -134,6 +134,16 @@ This dataset contains 1000 face images of various pets, such as dogs, cats, rabb
 The images capture the diversity of expressions these animals can display, such as happiness, sadness, anger etc, and provides a **classified and labeled** emotions features.<br>
 The dataset can be processed using machine learning techniques to learn an algoirhtm for pet species identificatoin and gain insights into pet emotions and personalities, enabling the creation of projects with pet face images whlie contributing to pet face recognition research and animal welfare.<br>
 
+<a name="Dog Emotions Prediction"></a>
+[Kaggle Dog Emotions Prediction](https://www.kaggle.com/datasets/devzohaib/dog-emotions-prediction) <br>
+This dataset is part of dataquest project-walkthrough. Images are downloaded from Flickr using API.
+
+**Features**:<br> Idog images are classified into 4 category based on their emotions. these 4 category are
+* happy
+* sad
+* angry
+* relaxed
+
 <a name="animal Faces"></a>
 [Kaggle Animal faces](https://www.kaggle.com/datasets/andrewmvd/animal-faces/data) <br>
 If one were to evalute subjectively the performance of our proposed model, this dataset, also known as Animal Faces-HQ (AFHQ), consists of 16,130 high-quality images at 512×512 resolution.<br>
