@@ -15163,6 +15163,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
         <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">loss</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">loss_derivative</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">final_layer</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loss_history</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">def</span> <span class="nf">add_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
@@ -15184,8 +15186,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
             <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">loss_history</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">loss</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">output</span><span class="p">))</span>
             <span class="n">output_error</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss_derivative</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">output_error</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">)</span>
+            
+    <span class="k">def</span> <span class="nf">add_final_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">final_layer</span> <span class="o">=</span> <span class="n">layer</span>
             
 </pre></div>
 
@@ -16077,15 +16083,30 @@ $$</p>
 <span class="n">emotion_detection_output</span> <span class="o">=</span> <span class="n">emotion_detection_network</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">common_features</span><span class="p">)</span>
 <span class="n">emotion_intensity_output</span> <span class="o">=</span> <span class="n">emotion_intensity_network</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">common_features</span><span class="p">)</span>
 
-<span class="n">species_network</span><span class="o">.</span><span class="n">set_loss</span><span class="p">(</span><span class="n">compute_cost</span><span class="p">,</span> <span class="n">compute_cost_derivative</span><span class="p">)</span>
-<span class="n">emotion_detection_network</span><span class="o">.</span><span class="n">set_loss</span><span class="p">(</span><span class="n">compute_cost</span><span class="p">,</span> <span class="n">compute_cost_derivative</span><span class="p">)</span>
-<span class="n">emotion_intensity_network</span><span class="o">.</span><span class="n">set_loss</span><span class="p">(</span><span class="n">compute_cost</span><span class="p">,</span> <span class="n">compute_cost_derivative</span><span class="p">)</span>
-
+<span class="c1"># Combine outputs and pass through final layer</span>
 <span class="n">combined_output</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">species_output</span><span class="p">,</span> <span class="n">emotion_detection_output</span><span class="p">,</span> <span class="n">emotion_intensity_output</span><span class="p">))</span>
-
-<span class="c1"># Dimensionality Reduction to Size 8 for Final Output: [cat_is_happy, cat_is_sad, cat_is_angry, dog_is_happy, dog_is_sad, dog_is_angry, cat_is_relaxed, dog_is_relaxed]</span>
-<span class="c1"># add a fully connected layer</span>
 <span class="n">final_layer</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="n">combined_output</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">softmax</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="c1"># add the final layer to the network</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add_final_layer</span><span class="p">(</span><span class="n">final_layer</span><span class="p">)</span>
+<span class="c1"># final_output = final_layer.forward(combined_output)</span>
+<span class="n">final_output</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">final_layer</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">combined_output</span><span class="p">)</span>
+
+<span class="c1"># combine the loss functions</span>
+<span class="k">def</span> <span class="nf">combined_loss</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+    <span class="n">species_loss</span> <span class="o">=</span> <span class="n">compute_cost</span><span class="p">(</span><span class="n">y_true</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+    <span class="n">emotion_detection_loss</span> <span class="o">=</span> <span class="n">compute_cost</span><span class="p">(</span><span class="n">y_true</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span>
+    <span class="n">emotion_intensity_loss</span> <span class="o">=</span> <span class="n">compute_cost</span><span class="p">(</span><span class="n">y_true</span><span class="p">[:,</span> <span class="mi">7</span><span class="p">:</span><span class="mi">8</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">[:,</span> <span class="mi">7</span><span class="p">:</span><span class="mi">8</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">species_loss</span> <span class="o">+</span> <span class="n">emotion_detection_loss</span> <span class="o">+</span> <span class="n">emotion_intensity_loss</span>
+
+<span class="c1"># combine the loss derivatives</span>
+<span class="k">def</span> <span class="nf">combined_loss_derivative</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+    <span class="n">species_loss_derivative</span> <span class="o">=</span> <span class="n">compute_cost_derivative</span><span class="p">(</span><span class="n">y_true</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+    <span class="n">emotion_detection_loss_derivative</span> <span class="o">=</span> <span class="n">compute_cost_derivative</span><span class="p">(</span><span class="n">y_true</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span>
+    <span class="n">emotion_intensity_loss_derivative</span> <span class="o">=</span> <span class="n">compute_cost_derivative</span><span class="p">(</span><span class="n">y_true</span><span class="p">[:,</span> <span class="mi">7</span><span class="p">:</span><span class="mi">8</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">[:,</span> <span class="mi">7</span><span class="p">:</span><span class="mi">8</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">species_loss_derivative</span><span class="p">,</span> <span class="n">emotion_detection_loss_derivative</span><span class="p">,</span> <span class="n">emotion_intensity_loss_derivative</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># set the loss function and loss derivative</span>
+<span class="n">network</span><span class="o">.</span><span class="n">set_loss</span><span class="p">(</span><span class="n">combined_loss</span><span class="p">,</span> <span class="n">combined_loss_derivative</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16112,9 +16133,26 @@ $$</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">100</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Train the network</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="n">network</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">X_train_normalized</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">)</span>
+
+<span class="c1"># Plot the loss history</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">loss_history</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Loss History&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Epoch&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Loss&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># calculate training accuracy</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">X_train_normalized</span><span class="p">)</span>
+<span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_train</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_pred</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
+        <span class="n">correct</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">correct</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Training Accuracy:&quot;</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16141,7 +16179,8 @@ $$</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Predict</span>
+<span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">network</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
 
@@ -16200,11 +16239,11 @@ $$</p>
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;plot training loss&#39;&#39;&#39;</span><span class="s1">&#39;&#39;</span>
 
-<span class="k">def</span> <span class="nf">plot_loss</span><span class="p">(</span><span class="n">history</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Model Loss&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">plot_loss</span><span class="p">(</span><span class="n">loss_history</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss_history</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Iteration&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Loss&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Loss vs. Iteration&quot;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -16318,7 +16357,7 @@ $$</p>
 <span class="n">accuracy</span> <span class="o">=</span> <span class="n">evaluate_classification</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
 <span class="n">mse</span> <span class="o">=</span> <span class="n">evaluate_regression</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean Squared Error: </span><span class="si">{</span><span class="n">mse</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Assuming &#39;file_paths&#39; is the list of file paths for the test dataset</span>
