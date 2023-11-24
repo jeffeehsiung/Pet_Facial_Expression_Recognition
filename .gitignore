@@ -2,10 +2,10 @@
 .DS_Store
 
 # trainned model
-.h5
-.hdf5
+*.h5
+*.hdf5
 ```
-.doc
-.html
+*.doc
+*.html
 
 
