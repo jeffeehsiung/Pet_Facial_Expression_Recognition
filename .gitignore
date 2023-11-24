@@ -1,17 +1,8 @@
 .idea
 .DS_Store
-# ignore saved h5 models
 *.h5
-# ignore model checkpoints
-*.ckpt
-# ignore dataset
-*.zip
-*.tar.gz
-*.tar
-*.gz
-*.rar
+*.hdf5
+*.doc
+*.html
 
-# ignore dataset directory
-afhq/*
-pets_facial_expression_dataset/*
-```
+
