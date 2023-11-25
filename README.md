@@ -55,9 +55,9 @@ Our model could find it's application in remote pet monitoring for healthcare as
 
 ## 💡 Solution
 
-**Pre-trained model**: Using a pre-trained CNN regression as base model (e.g. ResNet algorithm applied in the master thesis of Joerie). The CNN models have shown their success in image classifcation to capture feature vectors as explained in the Machine Learning (ML) Course provided by Faculty of Engineering Technology at KU Leuven.
+**Type of model**: Using CNN regression based model. The CNN models have shown their success in image classifcation to capture feature vectors as explained in the Machine Learning (ML) Course provided by Faculty of Engineering Technology at KU Leuven.
 
-**Custom model**: Using ML techinques/principles from the course we can make a customized CNN architecture with added convulutioonal layers and pool layers for feature extraction and spactial recudtion respectivily
+**Custom model**: Using ML techinques/principles from the course we can make a customized CNN architecture with added convolutional layers and pool layers for feature extraction and spactial recudtion respectivily
 
 ## 🧮 Methods
 
