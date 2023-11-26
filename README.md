@@ -60,7 +60,6 @@ Our model could find it's application in remote pet monitoring for healthcare as
 **Custom model**: Using ML techinques/principles from the course we can make a customized CNN architecture with added convolutional layers and pool layers for feature extraction and spactial recudtion respectivily
 
 ```mermaid
-```mermaid
 graph TD
     subgraph input_layer
         A[Input Image]
@@ -104,7 +103,7 @@ graph TD
     I -->|Sigmoid| K
     J -->|ReLU| L
     K -->|ReLU| L
-
+```
 
 ## 🧮 Methods
 
