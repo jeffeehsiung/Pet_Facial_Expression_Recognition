@@ -59,6 +59,52 @@ Our model could find it's application in remote pet monitoring for healthcare as
 
 **Custom model**: Using ML techinques/principles from the course we can make a customized CNN architecture with added convolutional layers and pool layers for feature extraction and spactial recudtion respectivily
 
+```mermaid
+graph TD
+    subgraph input_layer
+        A[Input Image]
+    end
+
+    subgraph face_detection
+        B[Line Segments]
+        C[Segment Grouping]
+        D[Face Formation]
+    end
+
+    subgraph species_classification
+        E[Cat/Dog/Wild Animal]
+        F[Cat]
+        G[Dog]
+    end
+
+    subgraph emotion_classification
+        H[Cat Emotions]
+        I[Dog Emotions]
+    end
+
+    subgraph emotion_level_estimation
+        J[Cat Emotion Levels]
+        K[Dog Emotion Levels]
+    end
+
+    subgraph emotion_decision
+        L[Decision Based on Emotion Levels]
+    end
+
+    A -->|Input| B
+    B -->|Line Segments| C
+    C -->|Segment Grouping| D
+    D -->|Face Formation| E
+    E -->|Cat/Dog/Wild Animal| F
+    E -->|Cat/Dog/Wild Animal| G
+    F -->|Emotion Classes| H
+    G -->|Emotion Classes| I
+    H -->|Sigmoid| J
+    I -->|Sigmoid| K
+    J -->|ReLU| L
+    K -->|ReLU| L
+```
+
 ## 🧮 Methods
 
 **Baseline model**: One requirement for this project is to develop based on the taught/used code snippets. In our case, as the emotion classification on top of the cat and dog face recongition is a multicalss classification problem and that the nature of emotion having a zero state where there is no emotion and an continuous range of values, an activation function of **Rectified Linear Unit (ReLU)** in the **Neural Networks** would suit the purpose of the classifier better than of sigmoid. **sigmoid** is best for on/off binray situations. **The ReLU provides a continuous linear relationship**. Additionally it has an **'off' range** where the output is zero. The **"off"** or disable feature of the ReLU activation enables models to **stitch together linear segments to model complex non-linear functions**.
