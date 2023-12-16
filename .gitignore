@@ -1,7 +1,7 @@
 .idea
 .DS_Store
 # ignore saved h5 models
-# *.h5
+*.h5
 # ignore model checkpoints
 *.ckpt
 # ignore dataset
