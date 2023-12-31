@@ -1,37 +1,5 @@
-<!-- 
-# Trello
-
-Link to trello is [here](https://trello.com/invite/b/PDlvtlED/ATTI80751ddf1d8b0471659f54c7dce4e5f7BDA5DE8F/funnymodel)
-
-# What needs to change?
-
-- Change title : Jeffee/Joerie ✅ (done)
-- Change motivation : Jeffee/Joerie ✅ (done)
-- Problem we tackling : Joerie ✅ (done)
-- Methods : Jeffee/Joerie  ✅ (done)
-- Solution : Joerie (maybe add done)
-- Papers : Jeffee ✅ (done)
-- Update images and videos : Joerie ✅ (done)
-- Restructure readme : Jeffee/Joerie ✅ (done)
-
-# What do we need to have unti next milestone?
-
-We need to:
-- Go through [This part](#💻-project-source-code) first repo and see if we can use it for our project
-- Go through the lectures for nural networks
-- What steps are we going to use?
-- Additionally, YouTube tutorials are very useful
-  - share the link if you find some interesting
-- Start coding
-  - Make plan:
-    - who does what
-    - who does paper
-    - who does code
-    - who does poster
-- SHOW REUSE OF CODE FROM LABS
-- Get theory why use this blablalba 2 + 2 = 4 -->
-
 # 🔍Bridging the Gap: Pet Facial Expression Recognition for Enhanced XR Human-Pet Interactions
+Our project explores the use of Convolutional Neural Networks (CNNs) and transfer learning for recognizing facial expressions in pets, aiming to enhance remote healthcare assessment and behavioral monitoring. We focus on accurately identifying pet species and their emotional states such as happiness, anger, and sadness
 <!-- TOC -->
 * [🔍Bridging the Gap: Pet Facial Expression Recognition for Enhanced XR Human-Pet Interactions](#bridging-the-gap-pet-facial-expression-recognition-for-enhanced-xr-human-pet-interactions)
   * [🤔Motivation: what problems are we tackling](#motivation-what-problems-are-we-tackling)
@@ -43,24 +11,28 @@ We need to:
     * [📑 Literature](#literature)
     * [💻 Related Works](#related-works)
 
+## Research Focus
+The study revolves around the question of how transfer learning can empower a model to classify a wide range of emotional states in various pet species, ensuring accuracy for applications in remote healthcare assessment and behavioral monitoring.
+
 ## 🤔Motivation: what problems are we tackling
 In extended reality (XR), the integration of pets into virtual spaces is has created for a wide range of new possiblities. However, there's still a significant void in understanding the emotianal nuances of pets in XR. We will try to enhance the technology by developing a model that (a) identifies between two different pet types (cats and dogs) and (b) classify between different facial expressions (happy, sad, and angry)<a href="paper1">[1]</a>. Additoinally, the article <a href="paper2">[2]</a> has presented the importance of accurate recognition and assessment of pain in animals that is crucial in clinical contexts for pain management and welfare assessment, especially in the veterinary clinical studies.
-
-Motivated by the growth of XR based technologies and the value of pets in human mental health, we will aim to integrate pets into XR. This will not only accommodate the preferences of the user in question but also enhances the overall immersive experience in human-pet interaction.
 
 **Potential use case**
 
 Our model could find it's application in remote pet monitoring for healthcare assessment. For instance: by using 
 <a href="https://en.wikipedia.org/wiki/Remote_camera">trail cameras</a> biologists, researchers, or even hobbyist could remotely look at the emotial state of an animal; conclude distress; behavioural change and so forth. We think this model has huge potential, especially when this model could get extended to multiple animals and multiple emotions.  
 
-## 💡 Solution
+## Model Development
+We developed three models for identifying pet emotions:
+1. Fully-connected layers baseline model
+2. Advanced CNN model with transfer learning
+3. EfficientNetB5-based model
 
-**Pre-trained model**: Using a pre-trained CNN regression as base model (e.g. ResNet algorithm applied in the master thesis of Joerie). The CNN models have shown their success in image classifcation to capture feature vectors as explained in the Machine Learning (ML) Course provided by Faculty of Engineering Technology at KU Leuven.
-
-**Custom model**: Using ML techinques/principles from the course we can make a customized CNN architecture with added convulutioonal layers and pool layers for feature extraction and spactial recudtion respectivily
+## Objectives
+- **Pet Identification**: To accurately identify cats and dogs within images.
+- **Emotion Detection**: Detect and classify emotional states (happy, angry, sad, relaxed) in pets.
 
 ## 🧮 Methods
-
 **Baseline model**: One requirement for this project is to develop based on the taught/used code snippets. In our case, as the emotion classification on top of the cat and dog face recongition is a multicalss classification problem and that the nature of emotion having a zero state where there is no emotion and an continuous range of values, an activation function of **Rectified Linear Unit (ReLU)** in the **Neural Networks** would suit the purpose of the classifier better than of sigmoid. **sigmoid** is best for on/off binray situations. **The ReLU provides a continuous linear relationship**. Additionally it has an **'off' range** where the output is zero. The **"off"** or disable feature of the ReLU activation enables models to **stitch together linear segments to model complex non-linear functions**.
 
 **ReLU Activation Definition**
@@ -153,9 +125,14 @@ There are three domains of classes, each providing about 5000 images. By having 
 
 
 ## 📑 Results/Discussion  
+- Baseline model achieved 45% accuracy, the CNN model with transfer learning reached 62%, and the EfficientNetB5-based model excelled at 94%.
+- The EfficientNetB5 model demonstrated robust generalization and high accuracy.
 
-**Preliminary Result**
-Pending (estimated time of arrival (ETA): 2023.11.29)
+## Conclusion
+Our study shows that transfer learning in advanced CNN and EfficientNetB5-based models significantly improves the accuracy of emotion recognition in pets. This advancement has profound implications for veterinary care and human-pet interactions.
+
+## Acknowledgment
+Special thanks to Meixing Liao, Meng Shang, and Prof. Bart Vanrumste for their support and contributions to this project.
 
 
 # 📚 References
