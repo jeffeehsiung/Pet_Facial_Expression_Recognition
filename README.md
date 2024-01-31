@@ -7,6 +7,7 @@ Our project explores the use of Convolutional Neural Networks (CNNs) and transfe
   * [🧮 Method](#method)
   * [📊 Dataset and Features](#dataset-and-features)
   * [📑 Results/Discussion](#resultsdiscussion)
+  * [📰 Poster](#poster)
   * [📚 References](#references)
     * [📑 Literature](#literature)
     * [💻 Related Works](#related-works)
@@ -130,6 +131,11 @@ There are three domains of classes, each providing about 5000 images. By having 
 
 ## Conclusion
 Our study shows that transfer learning in advanced CNN and EfficientNetB5-based models significantly improves the accuracy of emotion recognition in pets. This advancement has profound implications for veterinary care and human-pet interactions.
+
+## Poster
+<p align="center">
+  <img src="img/poster.png" alt="Pet Facial Expression Detection Poster"/>
+</p>
 
 ## Acknowledgment
 Special thanks to Meixing Liao, Meng Shang, and Prof. Bart Vanrumste for their support and contributions to this project.
